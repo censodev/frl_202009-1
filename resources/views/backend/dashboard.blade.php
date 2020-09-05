@@ -87,18 +87,18 @@
 
           @include('backend.inc-dashboard.slider')
           @include('backend.inc-dashboard.counter')
-          @include('backend.inc-dashboard.about')
-          @include('backend.inc-dashboard.why')
-          @include('backend.inc-dashboard.service')
+          {{-- @include('backend.inc-dashboard.about') --}}
+          {{-- @include('backend.inc-dashboard.why') --}}
+          {{-- @include('backend.inc-dashboard.service') --}}
           @include('backend.inc-dashboard.hot')
           {{-- @include('backend.inc-dashboard.hot-2') --}}
           @include('backend.inc-dashboard.product-hot')
           @include('backend.inc-dashboard.product-sale')
           {{-- @include('backend.inc-dashboard.post-hot') --}}
-          @include('backend.inc-dashboard.video-hot')
-          @include('backend.inc-dashboard.album-hot')
-          @include('backend.inc-dashboard.feedback')
-          @include('backend.inc-dashboard.endow')
+          {{-- @include('backend.inc-dashboard.video-hot') --}}
+          {{-- @include('backend.inc-dashboard.album-hot') --}}
+          {{-- @include('backend.inc-dashboard.feedback') --}}
+          {{-- @include('backend.inc-dashboard.endow') --}}
           {{-- @include('backend.inc-dashboard.certify') --}}
           {{-- @include('backend.inc-dashboard.tv') --}}
           {{-- @include('backend.inc-dashboard.newspaper') --}}
