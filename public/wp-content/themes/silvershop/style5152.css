@@ -625,7 +625,7 @@ input[type="submit"]:active,
 .woocommerce-page button.button:active,
 .woocommerce-page input.button:active {
     color: #fff;
-    background-color: #333;
+    /* background-color: #333; */
 }
 #search-container .search-submit {
     display: none;
@@ -4108,11 +4108,11 @@ ul.product-categories {
     min-height: 220px;
 }
 .footer-widget:first-child {
-    width: 36%;
+    width: 40%;
     padding-right: 4%;
 }
 .footer-widget:last-child {
-    width: 16%;
+    width: 36%;
     padding-right: 0;
 }
 .footer-top {

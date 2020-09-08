@@ -533,13 +533,12 @@ use App\Models\backend\Url;
 
     function rating_star($rating)
     {
-        $start_html = "";
+        $start_html = '';
         for ($i = 0; $i < 5; ++$i) {
-            if ($i < (int)$rating) {
-                $start_html .= '<i class="fa fa-star star-active" aria-hidden="true"></i>';
-            } else {
-                $start_html .= '<i class="fa fa-star" aria-hidden="true"></i>';
-            }
+            if ($i < (int)$rating)
+                $start_html .= '<span style="color:#EAAB00">★</span>';
+            else
+                $start_html .= '<span style="color:#D9D9D9">★</span>';
         }
         return $start_html;
     }

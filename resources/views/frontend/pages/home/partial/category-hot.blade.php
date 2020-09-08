@@ -51,9 +51,9 @@
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
                                 <div class="shortcode-title left">
-                                    <span class="big-title" style="color: #000000">
-                                        {!! $home_default->description_hot !!}
-                                    </span>
+                                    <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                        {{ $home_default->title_hot }}
+                                    </h1>
                                 </div>
                                 <div class="woo_categories_slider woocat product-category grid">
                                     <div id="category_grid" class="category-grid grid cols-4">

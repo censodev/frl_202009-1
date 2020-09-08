@@ -3,11 +3,11 @@ $(document).ready(function(){
         $(this).parent().find('.language-dropdown , .shopping-cart-content , .setting-wrapper').slideToggle('medium');
     });
 
-    var wow = new WOW();
-    wow.init();
+    // var wow = new WOW();
+    // wow.init();
 
     //thêm sản phẩm vào giỏ hàng
-    $('.product-add-to-card button').click(function(){
+    $('.product-add-to-card button').click(function(e){
         var elment          = $(this);
         var type            = $(this).data('type');
         var div             = $(this).closest('.product-add-to-card');
@@ -15,6 +15,7 @@ $(document).ready(function(){
         var quantity        = input.val();
         var id              = input.attr('data-id');
 
+        console.log(e)
 
         var sendData = {};
         sendData.id = id;
@@ -26,7 +27,7 @@ $(document).ready(function(){
             data: sendData,
             dataType: 'JSON',
             success: function (response) {
-
+                console.log(response)
                 $('.count-amount').text(response.cart_total);
                 $('.shop-total').text(response.cart_total);
                 $('.count-style').text(response.count_cart);

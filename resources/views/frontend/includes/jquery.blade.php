@@ -91,3 +91,9 @@ var wc_single_product_params = {"i18n_required_rating_text":"Please select a rat
 /* ]]> */
 </script>
 <script src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/single-product.min7e2e.js?ver=3.8.1') }}"></script>
+
+<script>
+    const $ = jQuery
+</script>
+
+<script src="{{ asset('assets/client/dist/script/custom.js') }}"></script>

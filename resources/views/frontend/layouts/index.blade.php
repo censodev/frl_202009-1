@@ -36,7 +36,7 @@
       <!-- End Main Footer -->
 
       <!-- Cart -->
-      @include('frontend.includes.cart')
+      {{-- @include('frontend.includes.cart') --}}
       <!-- End Cart -->
 
     </div>
@@ -51,7 +51,7 @@
     <!-- End Social -->
 
     <!-- Search Form -->
-    @include('frontend.includes.search-form')
+    {{-- @include('frontend.includes.search-form') --}}
     <!-- End Search Form -->
 
 

@@ -263,7 +263,6 @@ font-family: 'Roboto', Arial, Helvetica, sans-serif;
 .woocommerce .yith-wcwl-add-to-wishlist a.add_to_wishlist:hover, .woocommerce ul.products li.product .yith-wcwl-wishlistaddedbrowse a:hover, .woocommerce ul.products li.product .yith-wcwl-wishlistaddedbrowse a:hover,
 .woocommerce ul.products li.product .yith-wcwl-wishlistexistsbrowse a:hover, .woocommerce-page ul.products li.product .yith-wcwl-wishlistexistsbrowse a:hover,        
 .widget input[type="button"]:active, .widget input[type="reset"]:active, .widget input[type="submit"]:active, button:active, .contributor-posts-link:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .calloutarea_button a.button:active, .button_content_inner a:active, .woocommerce #content input.button:active, .woocommerce #respond input#submit:active, .woocommerce a.button:active, .woocommerce button.button:active, .woocommerce input.button:active, .woocommerce-page #content input.button:active, .woocommerce-page #respond input#submit:active, .woocommerce-page a.button:active, .woocommerce-page button.button:active, .woocommerce-page input.button:active,.woocommerce .wishlist_table td.product-add-to-cart a:hover{
-background-color: rgba(0,0,0,1);
 color: #FFFFFF;
 }
 .woocommerce ul.products li.product .product_type_simple.button, .woocommerce-page ul.products li.product .product_type_simple.button, .woocommerce ul.products li.product .product_type_grouped.button, 
@@ -287,7 +286,6 @@ color: #FFFFFF;
 .home-featured-carousel .product-detail .product_type_variable:hover,
 .feature-image-wrapper .product-block-hover .yith-wcwl-wishlistexistsbrowse a:hover:before,
 .feature-image-wrapper .product-block-hover .yith-wcwl-add-to-wishlist:hover {
-background-color: rgba(0,0,0,1);
 color: #FFFFFF;
 }
 </style>
@@ -331,6 +329,20 @@ color: #FFFFFF;
     .vc_custom_1575098662200 {
       padding-top: 30px !important;
       padding-bottom: 30px !important;
+    }
+</style>
+
+<style>
+    .single-shopping-cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .shopping-cart-delete {
+        align-self: self-start;
     }
 </style>
 

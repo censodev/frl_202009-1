@@ -326,13 +326,14 @@ $session_agency = session('data_agency');
                                 <div class="cart-icon"></div>
                                 <div class="cart-qty">
                                     <span class="cart-label">My Cart</span>
-                                    <a class="cart-contents" href="{{ route('info-cart') }}"
-                                        title="View your shopping cart">{{ !empty($carts) ? count($carts) : 0 }} items </a>
+                                    <a class="cart-contents" href="#" title="View your shopping cart">
+                                        <span class="count-style">{{ !empty($carts) ? count($carts) : 0 }}</span> items
+                                    </a>
                                 </div>
                             </div>
                             <aside id="woocommerce_widget_cart-3"
                                 class="widget woocommerce widget_shopping_cart tab_content">
-                                <div class="widget_shopping_cart_content">
+                                <div class="widget_shopping_cart_content shopping-cart-content">
                                     <ul>
                                         @if (!empty($carts) && count($carts) > 0)
                                             @foreach ($carts as $key => $item)
@@ -357,6 +358,24 @@ $session_agency = session('data_agency');
                                             @endforeach
                                         @endif
                                     </ul>
+                                    <div class="shopping-cart-total">
+                                        <h4>Tổng tiền : <span
+                                                class="shop-total">{{ number_format($cart_total_price, 0, '.', '.') }} đ</span>
+                                        </h4>
+                                    </div>
+                                    <div class="shopping-cart-btn">
+                                        <a style="background-color: transparent;
+                                                border: 1px solid #eeeeee;
+                                                color: #242424;
+                                                display: block;
+                                                font-size: 14px;
+                                                font-weight: 500;
+                                                padding: 14px 20px 12px;
+                                                text-align: center;
+                                                text-transform: uppercase;
+                                                transition: all 0.3s ease 0s;"
+                                        href="{{ route('info-cart') }}" title="Giỏ hàng">Giỏ hàng</a>
+                                    </div>
                                 </div>
                             </aside>
                         </div>
@@ -374,7 +393,7 @@ $session_agency = session('data_agency');
                     <div class="category-box">
                         <div class="home-category widget_product_categories">
                             <h3 class="widget-title">All Categories</h3>
-                            <ul class="product-categories">
+                            <ul class="product-categories" style="overflow-y:auto;max-height:550px">
                                 @foreach ($category_products as $category)
                                     <li class="cat-item cat-item-103 cat-parent"><a
                                         href="{{ asset(change_cat_url_by_article_url($category)) }}">{{ $category->title }}</a>

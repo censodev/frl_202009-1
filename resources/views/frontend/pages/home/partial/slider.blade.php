@@ -30,7 +30,20 @@
     </div>
 </div> --}}
 
-
+@if (!empty($related_sliders) && count($related_sliders) > 0)
+    @if (!empty($related_sliders[0]))
+    @php
+                        $slider_images = !empty( $related_sliders[0]->images ) ? json_decode(
+                        $related_sliders[0]->images ) : [];
+                        $title_image = !empty( $related_sliders[0]->title_image ) ? json_decode(
+                        $related_sliders[0]->title_image ) : [];
+                        $alt_image = !empty( $related_sliders[0]->alt_image ) ? json_decode(
+                        $related_sliders[0]->alt_image ) : [];
+                        $button_title = !empty( $related_sliders[0]->button_title ) ? json_decode(
+                        $related_sliders[0]->button_title ) : [];
+                        $button_link = !empty( $related_sliders[0]->button_link ) ? json_decode(
+                        $related_sliders[0]->button_link ) : [];
+                        @endphp
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1575269231855 vc_row-has-fill">
     <div class="wpb_column vc_column_container vc_col-sm-12">
         <div class="vc_column-inner">
@@ -158,15 +171,16 @@
                                         style="background:#f7f7f7;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;max-width:">
                                         <rs-module id="rev_slider_3_1" style="display:none;" data-version="6.1.0">
                                             <rs-slides>
+                                                @foreach ($slider_images as $key => $images)
                                                 <rs-slide data-key="rs-10" data-title="Mainbanner1"
-                                                    data-thumb="//wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/Main-banner-01-100x50.jpg"
+                                                    data-thumb="{{ $images }}"
                                                     data-anim="ei:d;eo:d;s:d,d;r:0;t:slideright,slideleft;sl:d,d;">
-                                                    <img src="wp-content/uploads/2019/12/Main-banner-01.jpg"
-                                                        alt="Main-banner-01" title="Main-banner-01" width="920"
+                                                    <img src="{{ $images }}"
+                                                        alt="{{ $alt_image[$key] }}" title="{{ $title_image[$key] }}" width="920"
                                                         height="530" class="rev-slidebg" data-no-retina>
                                                     <!--
                         -->
-                                                    <rs-layer id="slider-3-slide-10-layer-5" data-type="text"
+                                                    {{-- <rs-layer id="slider-3-slide-10-layer-5" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:64px,127px,-176px,0;y:m;yo:-114px,-113px,-103px,-105px;"
                                                         data-text="s:60,60,50,50;l:60,60,60,50;fw:100,200,200,200;a:inherit,inherit,inherit,center;"
@@ -174,11 +188,11 @@
                                                         data-frame_1="tp:600;st:510;sp:1000;sR:510;"
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         style="z-index:12;font-family:Poppins;">Discount 20%
-                                                    </rs-layer>
+                                                    </rs-layer> --}}
                                                     <!--
 
                         -->
-                                                    <rs-layer id="slider-3-slide-10-layer-8" data-type="text"
+                                                    {{-- <rs-layer id="slider-3-slide-10-layer-8" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:66px,128px,-279px,0;y:m;yo:107px,109px,96px,64px;"
                                                         data-text="s:13,12,12,12;l:22,22,22,20;ls:1px;fw:400,500,500,500;a:inherit;"
@@ -190,11 +204,11 @@
                                                         data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:0px,0px,0px,0px;bow:0px,0px,0px,0px;oX:50;oY:50;sp:0;"
                                                         style="z-index:8;background-color:#e5534c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
                                                         Shop Now
-                                                    </rs-layer>
+                                                    </rs-layer> --}}
                                                     <!--
 
                         -->
-                                                    <rs-layer id="slider-3-slide-10-layer-10" data-type="text"
+                                                    {{-- <rs-layer id="slider-3-slide-10-layer-10" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:64px,129px,-167px,0;y:m;yo:-50px,-56px,-48px,-50px;"
                                                         data-text="s:60,60,50,40;l:70,60,50,40;fw:500,500,500,600;a:inherit;"
@@ -202,11 +216,11 @@
                                                         data-frame_1="tp:600;st:1200;sp:1000;sR:1200;"
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         style="z-index:11;font-family:Poppins;">Fashion Style
-                                                    </rs-layer>
+                                                    </rs-layer> --}}
                                                     <!--
 
                         -->
-                                                    <rs-layer id="slider-3-slide-10-layer-12" data-type="text"
+                                                    {{-- <rs-layer id="slider-3-slide-10-layer-12" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,l,c;xo:66px,127px,53px,0;y:t,t,t,m;yo:275px,273px,239px,13px;"
                                                         data-text="w:normal;s:16,16,14,15;l:25,25,21,17;fw:300;"
@@ -214,18 +228,17 @@
                                                         data-frame_999="o:0;st:w;sR:7490;"
                                                         style="z-index:9;font-family:Poppins;">From here you can start
                                                         your new style in trends.
-                                                    </rs-layer>
+                                                    </rs-layer> --}}
                                                     <!--
 -->
                                                 </rs-slide>
-                                                <rs-slide data-key="rs-11" data-title="Mainbanner2"
+                                                @endforeach
+                                                {{-- <rs-slide data-key="rs-11" data-title="Mainbanner2"
                                                     data-thumb="//wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/main-banner-02-100x50.jpg"
                                                     data-anim="ei:d;eo:d;s:d,d;r:0;t:slideright,slideleft;sl:d,d;">
                                                     <img src="wp-content/uploads/2019/12/main-banner-02.jpg"
                                                         title="main-banner 02" width="920" height="530"
                                                         class="rev-slidebg" data-no-retina>
-                                                    <!--
-                        -->
                                                     <rs-layer id="slider-3-slide-11-layer-5" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:64px,127px,-165px,0;y:m;yo:-114px,-113px,-106px,-100px;"
@@ -235,9 +248,7 @@
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         style="z-index:12;font-family:Poppins;">Discount 25%
                                                     </rs-layer>
-                                                    <!--
 
-                        -->
                                                     <rs-layer id="slider-3-slide-11-layer-8" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:66px,128px,-267px,0;y:m;yo:107px,120px,96px,64px;"
@@ -251,9 +262,7 @@
                                                         style="z-index:8;background-color:#e5534c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
                                                         Shop Now
                                                     </rs-layer>
-                                                    <!--
 
-                        -->
                                                     <rs-layer id="slider-3-slide-11-layer-10" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,c,c;xo:64px,129px,-167px,0;y:m;yo:-48px,-53px,-48px,-36px;"
@@ -263,9 +272,7 @@
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         style="z-index:11;font-family:Poppins;">Trendy Style
                                                     </rs-layer>
-                                                    <!--
 
-                        -->
                                                     <rs-layer id="slider-3-slide-11-layer-12" data-type="text"
                                                         data-rsp_ch="on"
                                                         data-xy="x:l,l,l,c;xo:64px,127px,65px,0;y:t,t,t,m;yo:287px,278px,239px,10px;"
@@ -275,9 +282,7 @@
                                                         style="z-index:9;font-family:Poppins;">Lorem Ipsum is simply
                                                         dummy text of the print
                                                     </rs-layer>
-                                                    <!--
--->
-                                                </rs-slide>
+                                                </rs-slide> --}}
                                             </rs-slides>
                                             <rs-progress class="rs-bottom" style="visibility: hidden !important;">
                                             </rs-progress>
@@ -391,3 +396,5 @@
         </div>
     </div>
 </div>
+@endif
+@endif
