@@ -27,21 +27,13 @@
         </div>
     </div>
 @endif --}}
-<style>
-    .service-list.service-1 .icon-image::before {
-        content: "{{$funfact_icon[0]}}";
-    }
-    .service-list.service-2 .icon-image::before {
-        content: "{{$funfact_icon[1]}}";
-    }
-    .service-list.service-3 .icon-image::before {
-        content: "{{$funfact_icon[2]}}";
-    }
-    .service-list.service-4 .icon-image::before {
-        content: "{{$funfact_icon[3]}}";
-    }
-
-</style>
+@foreach ($funfact_icon as $k => $icon)
+    <style>
+        .service-list.service-{{ $k + 1 }} .icon-image::before {
+            content: "{{ $icon }}";
+        }
+    </style>
+@endforeach
 <div class="vc_row wpb_row vc_row-fluid theme-container home-service-align vc_custom_1565162299107">
     @foreach ($funfact_number as $key => $ff_number)
         <div class="wpb_column vc_column_container vc_col-sm-3">
