@@ -30,7 +30,7 @@
     </div> --}}
     <nav class="woocommerce-pagination">
         <ul class="page-numbers">
-            <li style="display:inline-block"><a class="prev page-numbers" href="page/2/index.html">&larr;</a></li>
+            <li style="display:inline-block"><a class="prev page-numbers" href="{{ $paginator->previousPageUrl() }}">&larr;</a></li>
             @foreach ($elements as $element)
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
@@ -42,7 +42,7 @@
                     @endforeach
                 @endif
             @endforeach
-            <li style="display:inline-block"><a class="next page-numbers" href="page/2/index.html">&rarr;</a></li>
+            <li style="display:inline-block"><a class="next page-numbers" href="{{ $paginator->nextPageUrl() }}">&rarr;</a></li>
         </ul>
     </nav>
 @endif
