@@ -70,22 +70,21 @@ class AppServiceProvider extends ServiceProvider
 
             $footer_contact_info    = !empty( $footers->footer_contact_info ) ? json_decode( $footers->footer_contact_info ) : [];
 
-            // $categories = Category::where([
-            //     ["status",1],
-            //     ["is_show_menu_main",1]
-            // ])->get();
-            // create_array_category_menu($categories);
-
-            // $categories = $categories->where('parent_id', -1)->sortBy('ordering');
-
-            $category_products = Category::where([
+            $cats = Category::where([
                 ["status",1],
                 ["is_show_menu_main",1]
             ])->get();
-            create_array_category_menu($category_products);
+            create_array_category_menu($cats);
 
-            $category_products = $category_products->where('parent_id', '<>', -1)->where('type', 5)->sortBy('ordering');
+            $categories = $cats->where('parent_id', -1)->sortBy('ordering');
 
+            // $category_products = Category::where([
+            //     ["status",1],
+            //     ["is_show_menu_main",1]
+            // ])->get();
+            // create_array_category_menu($category_products);
+
+            $category_products = $cats->where('parent_id', '<>', -1)->where('type', 5)->sortBy('ordering');
             $logo = ConfigLogo::where("status",1)->get();
             $logo->top = $logo->where("type",1)->first();
 
@@ -96,7 +95,7 @@ class AppServiceProvider extends ServiceProvider
                 $total = count($cart);
             }
 
-            $view->with( array("socials_topbar"=>$socials_topbar,"footer_contact_info"=>$footer_contact_info,"category_products"=>$category_products,"logo"=>$logo) );
+            $view->with( array("socials_topbar"=>$socials_topbar,"footer_contact_info"=>$footer_contact_info,"category_products"=>$category_products,"categories"=>$categories,"logo"=>$logo) );
         });
 
         View::composer(["frontend.includes.menu"], function($view){

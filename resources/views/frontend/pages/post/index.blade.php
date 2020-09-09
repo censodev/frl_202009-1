@@ -23,7 +23,7 @@ use App\Models\backend\ProductItem;
 @endphp
 
 @section($data->content)
-    @include('frontend.includes.breadcrumb')
+    {{-- @include('frontend.includes.breadcrumb') --}}
 
     <div class="ereaders-main-content">
         <div class="ereaders-main-section">

@@ -45,8 +45,11 @@
 							<ul class="todo-list" data-widget="todo-list">
 								@foreach($products as $key => $product)
 									@php
-										$images = $product->images ?? asset('assets/admin/dist/img/no_image.png');
+										$images         = json_decode( $product->images );
 									@endphp
+									{{-- @php
+										$images = $product->images ?? asset('assets/admin/dist/img/no_image.png');
+									@endphp --}}
 
 									<li class="ul-item-product-sale {{$product->id}}">
 					                    <span class="handle">
@@ -57,7 +60,7 @@
 					                      	<input type="checkbox" value="{{$product->id}}" name="applies_value[{{$product->id}}]['id']" id="todoCheck-product-sale-{{ $key }}">
 					                      	<label for="todoCheck-product-sale-{{ $key }}"></label>
 					                    </div>
-					                    <img src="{{ $images }}" width="40px" height="40px">
+					                    <img src="{{ $images[0] }}" width="40px" height="40px">
 					                    <span class="text">{{ $product->title }}</span>
 					              	</li>
 

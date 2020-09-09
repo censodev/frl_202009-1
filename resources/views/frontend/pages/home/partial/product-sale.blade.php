@@ -35,8 +35,8 @@
                                     </h1>
                                 </div>
                                 <div class="woo-products woo-content products_block shop woofeature">
-                                    <div class="woo-grid woo_grid cols-4">
-                                        <div class="woocommerce columns-4">
+                                    <div class="woo-grid woo_grid cols-5">
+                                        <div class="woocommerce columns-5">
                                             <ul class="products">
                                                 @foreach ($related_products_sale as $k => $product)
                                                     @php
@@ -62,12 +62,17 @@
                                                                             alt="{{ $alt_images[1] }}" 
                                                                             title="{{ $title_images[1] }}"
                                                                             sizes="(max-width: 194px) 100vw, 194px" />
-                                                                        <span class="onsale">-13%</span>
+                                                                        @php
+                                                                            $percent = round($product_item->price_promotion / $product_item->price_buy * 100);
+                                                                        @endphp
+                                                                        @if ($percent > 0)
+                                                                            <span class="onsale">-{{ $percent }}%</span>
+                                                                        @endif
                                                                     </a>
                                                                 </div>
                                                                 <div class="product-detail-wrapper">
                                                                     <div style="font-size:20px">{!! rating_star($product->rating) !!}</div>
-                                                                    <div>1000 lượt xem | 250 đã mua</div>
+                                                                    <div><i class="fa fa-eye" aria-hidden="true"></i> {{ $product->view ?? 0 }} | <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ $product->bought ?? 0 }}</div>
                                                                     <span class="price">
                                                                         <del>
                                                                             <span class="woocommerce-Price-amount amount">
