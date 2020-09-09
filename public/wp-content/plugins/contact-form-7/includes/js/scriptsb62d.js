@@ -42,151 +42,151 @@
 		return parseInt( $( 'input[name="_wpcf7"]', form ).val(), 10 );
 	};
 
-	wpcf7.initForm = function( form ) {
-		var $form = $( form );
+	// wpcf7.initForm = function( form ) {
+	// 	var $form = $( form );
 
-		$form.submit( function( event ) {
-			if ( ! wpcf7.supportHtml5.placeholder ) {
-				$( '[placeholder].placeheld', $form ).each( function( i, n ) {
-					$( n ).val( '' ).removeClass( 'placeheld' );
-				} );
-			}
+	// 	$form.submit( function( event ) {
+	// 		if ( ! wpcf7.supportHtml5.placeholder ) {
+	// 			$( '[placeholder].placeheld', $form ).each( function( i, n ) {
+	// 				$( n ).val( '' ).removeClass( 'placeheld' );
+	// 			} );
+	// 		}
 
-			if ( typeof window.FormData === 'function' ) {
-				wpcf7.submit( $form );
-				event.preventDefault();
-			}
-		} );
+	// 		if ( typeof window.FormData === 'function' ) {
+	// 			wpcf7.submit( $form );
+	// 			event.preventDefault();
+	// 		}
+	// 	} );
 
-		$( '.wpcf7-submit', $form ).after( '<span class="ajax-loader"></span>' );
+	// 	$( '.wpcf7-submit', $form ).after( '<span class="ajax-loader"></span>' );
 
-		wpcf7.toggleSubmit( $form );
+	// 	wpcf7.toggleSubmit( $form );
 
-		$form.on( 'click', '.wpcf7-acceptance', function() {
-			wpcf7.toggleSubmit( $form );
-		} );
+	// 	$form.on( 'click', '.wpcf7-acceptance', function() {
+	// 		wpcf7.toggleSubmit( $form );
+	// 	} );
 
-		// Exclusive Checkbox
-		$( '.wpcf7-exclusive-checkbox', $form ).on( 'click', 'input:checkbox', function() {
-			var name = $( this ).attr( 'name' );
-			$form.find( 'input:checkbox[name="' + name + '"]' ).not( this ).prop( 'checked', false );
-		} );
+	// 	// Exclusive Checkbox
+	// 	$( '.wpcf7-exclusive-checkbox', $form ).on( 'click', 'input:checkbox', function() {
+	// 		var name = $( this ).attr( 'name' );
+	// 		$form.find( 'input:checkbox[name="' + name + '"]' ).not( this ).prop( 'checked', false );
+	// 	} );
 
-		// Free Text Option for Checkboxes and Radio Buttons
-		$( '.wpcf7-list-item.has-free-text', $form ).each( function() {
-			var $freetext = $( ':input.wpcf7-free-text', this );
-			var $wrap = $( this ).closest( '.wpcf7-form-control' );
+	// 	// Free Text Option for Checkboxes and Radio Buttons
+	// 	$( '.wpcf7-list-item.has-free-text', $form ).each( function() {
+	// 		var $freetext = $( ':input.wpcf7-free-text', this );
+	// 		var $wrap = $( this ).closest( '.wpcf7-form-control' );
 
-			if ( $( ':checkbox, :radio', this ).is( ':checked' ) ) {
-				$freetext.prop( 'disabled', false );
-			} else {
-				$freetext.prop( 'disabled', true );
-			}
+	// 		if ( $( ':checkbox, :radio', this ).is( ':checked' ) ) {
+	// 			$freetext.prop( 'disabled', false );
+	// 		} else {
+	// 			$freetext.prop( 'disabled', true );
+	// 		}
 
-			$wrap.on( 'change', ':checkbox, :radio', function() {
-				var $cb = $( '.has-free-text', $wrap ).find( ':checkbox, :radio' );
+	// 		$wrap.on( 'change', ':checkbox, :radio', function() {
+	// 			var $cb = $( '.has-free-text', $wrap ).find( ':checkbox, :radio' );
 
-				if ( $cb.is( ':checked' ) ) {
-					$freetext.prop( 'disabled', false ).focus();
-				} else {
-					$freetext.prop( 'disabled', true );
-				}
-			} );
-		} );
+	// 			if ( $cb.is( ':checked' ) ) {
+	// 				$freetext.prop( 'disabled', false ).focus();
+	// 			} else {
+	// 				$freetext.prop( 'disabled', true );
+	// 			}
+	// 		} );
+	// 	} );
 
-		// Placeholder Fallback
-		if ( ! wpcf7.supportHtml5.placeholder ) {
-			$( '[placeholder]', $form ).each( function() {
-				$( this ).val( $( this ).attr( 'placeholder' ) );
-				$( this ).addClass( 'placeheld' );
+	// 	// Placeholder Fallback
+	// 	if ( ! wpcf7.supportHtml5.placeholder ) {
+	// 		$( '[placeholder]', $form ).each( function() {
+	// 			$( this ).val( $( this ).attr( 'placeholder' ) );
+	// 			$( this ).addClass( 'placeheld' );
 
-				$( this ).focus( function() {
-					if ( $( this ).hasClass( 'placeheld' ) ) {
-						$( this ).val( '' ).removeClass( 'placeheld' );
-					}
-				} );
+	// 			$( this ).focus( function() {
+	// 				if ( $( this ).hasClass( 'placeheld' ) ) {
+	// 					$( this ).val( '' ).removeClass( 'placeheld' );
+	// 				}
+	// 			} );
 
-				$( this ).blur( function() {
-					if ( '' === $( this ).val() ) {
-						$( this ).val( $( this ).attr( 'placeholder' ) );
-						$( this ).addClass( 'placeheld' );
-					}
-				} );
-			} );
-		}
+	// 			$( this ).blur( function() {
+	// 				if ( '' === $( this ).val() ) {
+	// 					$( this ).val( $( this ).attr( 'placeholder' ) );
+	// 					$( this ).addClass( 'placeheld' );
+	// 				}
+	// 			} );
+	// 		} );
+	// 	}
 
-		if ( wpcf7.jqueryUi && ! wpcf7.supportHtml5.date ) {
-			$form.find( 'input.wpcf7-date[type="date"]' ).each( function() {
-				$( this ).datepicker( {
-					dateFormat: 'yy-mm-dd',
-					minDate: new Date( $( this ).attr( 'min' ) ),
-					maxDate: new Date( $( this ).attr( 'max' ) )
-				} );
-			} );
-		}
+	// 	if ( wpcf7.jqueryUi && ! wpcf7.supportHtml5.date ) {
+	// 		$form.find( 'input.wpcf7-date[type="date"]' ).each( function() {
+	// 			$( this ).datepicker( {
+	// 				dateFormat: 'yy-mm-dd',
+	// 				minDate: new Date( $( this ).attr( 'min' ) ),
+	// 				maxDate: new Date( $( this ).attr( 'max' ) )
+	// 			} );
+	// 		} );
+	// 	}
 
-		if ( wpcf7.jqueryUi && ! wpcf7.supportHtml5.number ) {
-			$form.find( 'input.wpcf7-number[type="number"]' ).each( function() {
-				$( this ).spinner( {
-					min: $( this ).attr( 'min' ),
-					max: $( this ).attr( 'max' ),
-					step: $( this ).attr( 'step' )
-				} );
-			} );
-		}
+	// 	if ( wpcf7.jqueryUi && ! wpcf7.supportHtml5.number ) {
+	// 		$form.find( 'input.wpcf7-number[type="number"]' ).each( function() {
+	// 			$( this ).spinner( {
+	// 				min: $( this ).attr( 'min' ),
+	// 				max: $( this ).attr( 'max' ),
+	// 				step: $( this ).attr( 'step' )
+	// 			} );
+	// 		} );
+	// 	}
 
-		// Character Count
-		$( '.wpcf7-character-count', $form ).each( function() {
-			var $count = $( this );
-			var name = $count.attr( 'data-target-name' );
-			var down = $count.hasClass( 'down' );
-			var starting = parseInt( $count.attr( 'data-starting-value' ), 10 );
-			var maximum = parseInt( $count.attr( 'data-maximum-value' ), 10 );
-			var minimum = parseInt( $count.attr( 'data-minimum-value' ), 10 );
+	// 	// Character Count
+	// 	$( '.wpcf7-character-count', $form ).each( function() {
+	// 		var $count = $( this );
+	// 		var name = $count.attr( 'data-target-name' );
+	// 		var down = $count.hasClass( 'down' );
+	// 		var starting = parseInt( $count.attr( 'data-starting-value' ), 10 );
+	// 		var maximum = parseInt( $count.attr( 'data-maximum-value' ), 10 );
+	// 		var minimum = parseInt( $count.attr( 'data-minimum-value' ), 10 );
 
-			var updateCount = function( target ) {
-				var $target = $( target );
-				var length = $target.val().length;
-				var count = down ? starting - length : length;
-				$count.attr( 'data-current-value', count );
-				$count.text( count );
+	// 		var updateCount = function( target ) {
+	// 			var $target = $( target );
+	// 			var length = $target.val().length;
+	// 			var count = down ? starting - length : length;
+	// 			$count.attr( 'data-current-value', count );
+	// 			$count.text( count );
 
-				if ( maximum && maximum < length ) {
-					$count.addClass( 'too-long' );
-				} else {
-					$count.removeClass( 'too-long' );
-				}
+	// 			if ( maximum && maximum < length ) {
+	// 				$count.addClass( 'too-long' );
+	// 			} else {
+	// 				$count.removeClass( 'too-long' );
+	// 			}
 
-				if ( minimum && length < minimum ) {
-					$count.addClass( 'too-short' );
-				} else {
-					$count.removeClass( 'too-short' );
-				}
-			};
+	// 			if ( minimum && length < minimum ) {
+	// 				$count.addClass( 'too-short' );
+	// 			} else {
+	// 				$count.removeClass( 'too-short' );
+	// 			}
+	// 		};
 
-			$( ':input[name="' + name + '"]', $form ).each( function() {
-				updateCount( this );
+	// 		$( ':input[name="' + name + '"]', $form ).each( function() {
+	// 			updateCount( this );
 
-				$( this ).keyup( function() {
-					updateCount( this );
-				} );
-			} );
-		} );
+	// 			$( this ).keyup( function() {
+	// 				updateCount( this );
+	// 			} );
+	// 		} );
+	// 	} );
 
-		// URL Input Correction
-		$form.on( 'change', '.wpcf7-validates-as-url', function() {
-			var val = $.trim( $( this ).val() );
+	// 	// URL Input Correction
+	// 	$form.on( 'change', '.wpcf7-validates-as-url', function() {
+	// 		var val = $.trim( $( this ).val() );
 
-			if ( val
-			&& ! val.match( /^[a-z][a-z0-9.+-]*:/i )
-			&& -1 !== val.indexOf( '.' ) ) {
-				val = val.replace( /^\/+/, '' );
-				val = 'http://' + val;
-			}
+	// 		if ( val
+	// 		&& ! val.match( /^[a-z][a-z0-9.+-]*:/i )
+	// 		&& -1 !== val.indexOf( '.' ) ) {
+	// 			val = val.replace( /^\/+/, '' );
+	// 			val = 'http://' + val;
+	// 		}
 
-			$( this ).val( val );
-		} );
-	};
+	// 		$( this ).val( val );
+	// 	} );
+	// };
 
 	wpcf7.submit = function( form ) {
 		if ( typeof window.FormData !== 'function' ) {

@@ -11,23 +11,31 @@
     @endif
 
     <!-- Main Body Area Start Here -->
-    <div class="ereaders-main-wrapper">
+    <div id="page" class="hfeed site">
       <!-- Main Header-->
       @include('frontend.includes.header')
       <!--End Main Header -->
-
-      <!-- Contains page content -->
-        @yield('content')
-      <!-- End Contains page content -->
-
+      <div id="main" class="site-main full-width box-page">
+        <div class="main_inner">
+          <div class="page-title header">
+            <div class="page-title-inner">
+              <h3 class="entry-title-main">{{ $data['title'] }}</h3>
+            </div>
+          </div>
+          <div class="main-content-inner full-width">
+            <!-- Contains page content -->
+              @yield('content')
+            <!-- End Contains page content -->
+          </div>
+        </div>
+      </div>
       <!-- Main Footer -->
       @include('frontend.includes.footer')
       <!-- End Main Footer -->
 
-        <!-- Cart -->
-        @include('frontend.includes.cart')
-        <!-- End Cart -->
-
+      <!-- Cart -->
+      {{-- @include('frontend.includes.cart') --}}
+      <!-- End Cart -->
     </div>
     <!--end wrapper -->
 
@@ -40,7 +48,7 @@
     <!-- End Social -->
 
     <!-- Search Form -->
-    @include('frontend.includes.search-form')
+    {{-- @include('frontend.includes.search-form') --}}
     <!-- End Search Form -->
 
   </body>

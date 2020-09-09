@@ -19,7 +19,7 @@ use App\Models\backend\ConfigLogo;
 
 class PostController extends Controller
 {
-    protected $limit = 18;
+    protected $limit = 6;
     private $layout  = 'frontend.layouts.';
     private $view    = 'frontend.pages.post.';
     private $content = 'content';

@@ -64,7 +64,7 @@
                                                                             title="{{ $title_images[1] }}"
                                                                             sizes="(max-width: 194px) 100vw, 194px" />
                                                                         @php
-                                                                            $percent = round($product_item->price_promotion / $product_item->price_buy * 100);
+                                                                            $percent = 100 - round($product_item->price_promotion / $product_item->price_buy * 100);
                                                                         @endphp
                                                                         @if ($percent > 0)
                                                                             <span class="onsale">-{{ $percent }}%</span>
