@@ -14,7 +14,7 @@ use App\Models\backend\Product;
 
 class SearchController extends Controller
 {
-    protected $limit = 12;
+    protected $limit = 10;
     private $layout  = 'frontend.layouts.';
     private $view    = 'frontend.pages.search.';
     private $content = 'content';

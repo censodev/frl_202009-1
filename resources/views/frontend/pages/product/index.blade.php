@@ -495,5 +495,4 @@ $materials = $data['materials'];
             </div>
         </div>
     </div>
-    </div>
 @endsection
