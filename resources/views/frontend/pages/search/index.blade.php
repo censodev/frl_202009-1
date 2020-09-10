@@ -130,7 +130,7 @@
                             </ul>
                             {{ $list_product->links('frontend.includes.pagination') }}
                         @else
-                            <h3>Chưa cập nhật</h3>
+                            <h3 style="text-align:center">Không tìm thấy sản phẩm phù hợp</h3>
                         @endif
                     </main>
                 </div>
