@@ -89,57 +89,57 @@ use App\Models\backend\ProductItem; ?>
         </div>
 
     </div> --}}
-
-    <article id="post-1"
-        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <img width="1200" height="500"
-            src="{{ $post_detail->images }}"
-            class="attachment-tmpmela-blog-posts-list size-tmpmela-blog-posts-list wp-post-image"
-            alt="{{ $post_detail->images }}" />
-        <div class="entry-main-content">
-            <div class="entry-content-other">
-                {{-- <header class="entry-header">
-                    <h1 class="entry-title">
-                        A glorious visual exploration of coffee culture
-                    </h1>
-                </header> --}}
-                <!-- .entry-header -->
-                <div class="entry-content">
-                    
-                    <p style="color:#E5534C">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        {{ $post_date }} /
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                        {{ $post_detail->view ?? 0 }} /
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        {{ $post_detail->rating ?? 0 }}
-                    </p>
-                    <div>
-                        {!! $post_detail->description !!}
+    <div class="main-content-inner full-width">
+        <article id="post-1"
+            class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+            <img width="1200" height="500"
+                src="{{ $post_detail->images }}"
+                class="attachment-tmpmela-blog-posts-list size-tmpmela-blog-posts-list wp-post-image"
+                alt="{{ $post_detail->images }}" />
+            <div class="entry-main-content">
+                <div class="entry-content-other">
+                    {{-- <header class="entry-header">
+                        <h1 class="entry-title">
+                            A glorious visual exploration of coffee culture
+                        </h1>
+                    </header> --}}
+                    <!-- .entry-header -->
+                    <div class="entry-content">
+                        
+                        <p style="color:#E5534C">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            {{ $post_date }} /
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            {{ $post_detail->view ?? 0 }} /
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            {{ $post_detail->rating ?? 0 }}
+                        </p>
+                        <div>
+                            {!! $post_detail->description !!}
+                        </div>
                     </div>
+                    <!-- .entry-content -->
+                    {{-- <div class="entry-meta">
+                        <div class="meta-inner">
+                            <span class="author vcard"><i class="fa fa-pencil-square-o"></i><a class="url fn n"
+                                    href="../author/admin/index.html" title="View all posts by admin" rel="author">by
+                                    admin</a></span>
+                        </div>
+                        <div class="meta-inner">
+                            <span class="categories-links"><i class="fa fa-folder-o"></i><a
+                                    href="../category/uncategorized/index.html" rel="category tag">Uncategorized</a></span>
+                        </div>
+                        <div class="meta-inner">
+                            <span class="entry-date"><a href="%251%24s.html" title="%2$s" rel="bookmark"><i
+                                        class="fa fa-calendar-o"></i>November 29,
+                                    2018</a></span>
+                        </div>
+                    </div> --}}
+                    <!-- .entry-meta -->
                 </div>
-                <!-- .entry-content -->
-                {{-- <div class="entry-meta">
-                    <div class="meta-inner">
-                        <span class="author vcard"><i class="fa fa-pencil-square-o"></i><a class="url fn n"
-                                href="../author/admin/index.html" title="View all posts by admin" rel="author">by
-                                admin</a></span>
-                    </div>
-                    <div class="meta-inner">
-                        <span class="categories-links"><i class="fa fa-folder-o"></i><a
-                                href="../category/uncategorized/index.html" rel="category tag">Uncategorized</a></span>
-                    </div>
-                    <div class="meta-inner">
-                        <span class="entry-date"><a href="%251%24s.html" title="%2$s" rel="bookmark"><i
-                                    class="fa fa-calendar-o"></i>November 29,
-                                2018</a></span>
-                    </div>
-                </div> --}}
-                <!-- .entry-meta -->
+                <!-- entry-content-other -->
             </div>
-            <!-- entry-content-other -->
-        </div>
-    </article>
-    @include('frontend.includes.comment')
-
+        </article>
+        @include('frontend.includes.comment')
+    </div>
 @endsection

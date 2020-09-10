@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   @include('frontend.includes.head')
-  <body class="page-site">
+  <body class="archive tax-product_cat term-petrome-rolit term-116 wp-embed-responsive theme-silvershop woocommerce woocommerce-page woocommerce-js list-view shop-left-sidebar wpb-js-composer js-comp-ver-6.1 vc_responsive">
 
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=192981648374769&autoLogAppEvents=1" nonce="DmliMxmJ"></script>
@@ -17,16 +17,14 @@
       <!--End Main Header -->
       <div id="main" class="site-main full-width box-page">
         <div class="main_inner">
-          <div class="page-title header">
+          <div class="page-title header" style="display:block">
             <div class="page-title-inner">
               <h3 class="entry-title-main">{{ $data['title'] }}</h3>
             </div>
           </div>
-          <div class="main-content-inner full-width">
-            <!-- Contains page content -->
-              @yield('content')
-            <!-- End Contains page content -->
-          </div>
+          <!-- Contains page content -->
+            @yield('content')
+          <!-- End Contains page content -->
         </div>
       </div>
       <!-- Main Footer -->
