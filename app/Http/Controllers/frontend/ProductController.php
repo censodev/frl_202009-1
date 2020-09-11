@@ -24,7 +24,7 @@ use App\Models\backend\ConfigLogo;
 
 class ProductController extends Controller
 {
-    protected $limit = 10;
+    protected $limit = 20;
     private $layout  = 'frontend.layouts.';
     private $view    = 'frontend.pages.product.';
     private $content = 'content';

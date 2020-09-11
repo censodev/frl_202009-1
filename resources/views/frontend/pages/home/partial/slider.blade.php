@@ -202,7 +202,7 @@
                                                         data-frame_1="tp:600;st:1310;sp:1000;sR:1310;"
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:0px,0px,0px,0px;bow:0px,0px,0px,0px;oX:50;oY:50;sp:0;"
-                                                        style="z-index:8;background-color:#e5534c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
+                                                        style="z-index:8;background-color:#86c54c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
                                                         Shop Now
                                                     </rs-layer> --}}
                                                     <!--
@@ -259,7 +259,7 @@
                                                         data-frame_1="tp:600;st:1390;sp:1000;sR:1390;"
                                                         data-frame_999="st:w;auto:true;" data-frame_999_mask="u:t;"
                                                         data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:0px,0px,0px,0px;bow:0px,0px,0px,0px;oX:50;oY:50;sp:0;"
-                                                        style="z-index:8;background-color:#e5534c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
+                                                        style="z-index:8;background-color:#86c54c;font-family:Poppins;text-transform:uppercase;cursor:pointer;">
                                                         Shop Now
                                                     </rs-layer>
 
@@ -320,7 +320,7 @@
                                                             arrows: {
                                                                 enable: true,
                                                                 style: "custom",
-                                                                hide_onmobile: true,
+                                                                hide_onmobile: false,
                                                                 hide_under: 767,
                                                                 hide_onleave: true,
                                                                 hide_delay: 20,
@@ -335,7 +335,7 @@
                                                                 }
                                                             },
                                                             bullets: {
-                                                                enable: true,
+                                                                enable: false,
                                                                 tmp: "",
                                                                 style: "custom",
                                                                 hide_over: 767,

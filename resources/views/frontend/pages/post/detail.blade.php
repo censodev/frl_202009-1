@@ -89,29 +89,41 @@ use App\Models\backend\ProductItem; ?>
         </div>
 
     </div> --}}
+
+
+    <style>
+        .page-title .entry-title-main { display: none !important; }
+    </style>
+
     <div class="main-content-inner full-width">
-        <article id="post-1"
-            class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-            <img width="1200" height="500"
+        <nav class="woocommerce-breadcrumb">
+            <span><a href="{{ url('/') }}">Trang chủ</a></span> /
+            <span><a href="{{ url($data['category_detail']->alias) }}" title="{{ $data['category_detail']->title }}">{{ $data['category_detail']->title }}</a></span> /
+            <span>{{ $data['title'] }}</span>
+        </nav>
+        <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+            {{-- <img width="1200" height="500"
                 src="{{ $post_detail->images }}"
                 class="attachment-tmpmela-blog-posts-list size-tmpmela-blog-posts-list wp-post-image"
-                alt="{{ $post_detail->images }}" />
+                alt="{{ $post_detail->images }}" /> --}}
             <div class="entry-main-content">
                 <div class="entry-content-other">
-                    {{-- <header class="entry-header">
-                        <h1 class="entry-title">
-                            A glorious visual exploration of coffee culture
+                    <header class="entry-header">
+                        <h1 class="entry-title" style="padding-bottom: 1rem">
+                            {{ $data['title'] }}
                         </h1>
-                    </header> --}}
+                    </header>
                     <!-- .entry-header -->
                     <div class="entry-content">
-                        
-                        <p style="color:#E5534C">
+                        <p style="color:#86c54c">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            Ngày đăng:
                             {{ $post_date }} /
                             <i class="fa fa-eye" aria-hidden="true"></i>
+                            Lượt xem:
                             {{ $post_detail->view ?? 0 }} /
                             <i class="fa fa-star" aria-hidden="true"></i>
+                            Đánh giá:
                             {{ $post_detail->rating ?? 0 }}
                         </p>
                         <div>

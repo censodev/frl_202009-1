@@ -38,7 +38,9 @@
       <!-- Cart -->
       {{-- @include('frontend.includes.cart') --}}
       <!-- End Cart -->
-
+      <div class="backtotop">
+        <a id="to_top" href="#" style="display: inline;"></a>
+      </div>
     </div>
     <!--end wrapper -->
 

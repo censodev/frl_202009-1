@@ -46,6 +46,7 @@ class ShoppingController extends Controller
     {
         $data = new Collection();
         $data->title   = 'Giỏ hàng';
+        $data['title'] = 'Giỏ hàng';
         $data->layout  = $this->layout.'page';
         $data->view    = $this->view.'index';
         $data->content = $this->content;

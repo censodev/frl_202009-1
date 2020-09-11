@@ -204,7 +204,7 @@ outline: 0;
 /*a:active,
 a:hover,
 .post-navigation a:hover .fa {
-    color: #E5534C;
+    color: #86c54c;
 }*/
 h1,
 h2,
@@ -1023,7 +1023,7 @@ span + .edit-link:before,
     margin-right:5px;
 }
 .header-menu-links a:hover::before{
-    color: #E5534C;
+    color: #86c54c;
 }
 .header-menu-links li.checkout a::before{
     content: "\f041";
@@ -1084,7 +1084,7 @@ span + .edit-link:before,
     cursor: pointer;            
 }
 .topbar-link-toggle:hover, .topbar-link-toggle:hover::before {
-    color: #E5534C;
+    color: #86c54c;
 } 
 .header-menu-links li {
     display: block;
@@ -1999,7 +1999,7 @@ a.post-thumbnail:hover {
 /*.woocommerce .woocommerce-breadcrumb span a:hover,
 .woocommerce-page .woocommerce-breadcrumb span a:hover,
 .breadcrumbs a:hover {
-    color: #E5534C;
+    color: #86c54c;
 }*/
 .page-title .entry-title-main,
 .breadcrumbs,
@@ -2137,7 +2137,7 @@ a.post-thumbnail:hover {
     display: block;
 }
 .meta-inner a, .site-content .meta-inner span .fa {
-    color: #E5534C;
+    color: #86c54c;
 }
 .cat-links {
     font-weight: 900;
@@ -2320,7 +2320,7 @@ a.post-thumbnail:hover {
     line-height: 36px;
 }
 .sticky-post {
-    background: #E5534C;
+    background: #86c54c;
     color: #fff;
     padding: 2px 10px;
     display: inline-block;
@@ -2697,7 +2697,7 @@ article.sticky.hentry .post-content {
     float: left;
 }
 /*.post-navigation a:hover .fa {
-    color: #E5534C;
+    color: #86c54c;
 }*/
 .post-navigation a.next-post {
     float: right;
@@ -2741,9 +2741,9 @@ article.sticky.hentry .post-content {
 }
 .paging-navigation a:hover,
 .paging-navigation .page-numbers.current {
-    background: #E5534C;
+    background: #86c54c;
     color: #fff;
-    border: 1px solid #E5534C;
+    border: 1px solid #86c54c;
 }
 /**
  * 6.8 Attachments
@@ -2819,7 +2819,7 @@ article.sticky.hentry .post-content {
 /*.taxonomy-description a:hover,
 .author-description a:hover {
     text-decoration: none;
-    color: #E5534C;
+    color: #86c54c;
 }*/
 /**
  * 6.10 Contributor Page
@@ -3379,7 +3379,7 @@ article.sticky.hentry .post-content {
 .category-list:before {
     position: absolute;
     content: "";
-    border-bottom: 1px solid #E5534C;
+    border-bottom: 1px solid #86c54c;
     bottom: -1px;
     top: auto;
     height: 1px;
@@ -3407,7 +3407,7 @@ article.sticky.hentry .post-content {
     display: none;*/
 }
 .product-categories li a:hover:before, .product-categories li span:hover:before {
-    color: #e5534c;
+    color: #86c54c;
 }
 .home-category .product-categories li span {
     border: 0;
@@ -4559,7 +4559,7 @@ ul.product-categories {
 }
 .resp-tabs-list li.resp-tab-active .tab-title,
 .resp-tabs-list li:hover .tab-title {
-    color: #E5534C;
+    color: #86c54c;
 }
 .resp-tabs-list li.resp-tab-active .tab-title:after {
     bottom: -10px;
@@ -5315,7 +5315,7 @@ body.grid {
     margin: 0 10px;
 }
 .staff-page .staff-position {
-    color: #E5534C;
+    color: #86c54c;
     font-size: 13px;
 }
 .staff-page .staff-name a {
@@ -5682,8 +5682,8 @@ body.grid {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0;
+    /* -webkit-appearance: none; */
+    /* margin: 0; */
 }
 /*------------------------ newsletter ----------------------*/
 .footer-outer .widget {
@@ -6023,7 +6023,7 @@ input.tnp-email:focus {
 .gallery-zoom .icon,
 .gallery-redirect .icon,
 .blog-posts-content .block_hover .icon {
-    background-color: #E5534C;
+    background-color: #86c54c;
     display: inline-block;
     position: relative;
     transform: scale(0);
@@ -6150,7 +6150,7 @@ input.tnp-email:focus {
     -ms-border-radius: 50px;
 }
 .tparrows.custom:hover {
-    background: #E5534C;
+    background: #86c54c;
 }
 .tparrows.custom:before {
     font-family: 'FontAwesome';
@@ -6649,7 +6649,7 @@ button.woocount.loadgridlist:before {
     padding: 14px 20px;
 }
 .category-list .box-category-heading {
-    background-color: #E5534C;
+    background-color: #86c54c;
     color:#ffffff;
 }
 .widget.widget_product_categories .widget-title {
@@ -6699,7 +6699,7 @@ button.woocount.loadgridlist:before {
 }
 .post-detail .post-date {
     padding: 3px 0;
-    color: #E5534C;
+    color: #86c54c;
 }
 .blog-posts-content .blog-grid .container,
 .portfolio-grid .item {
@@ -6812,7 +6812,7 @@ button.woocount.loadgridlist:before {
     content: "";
 }
 .read-more a:hover:after {
-    background: #E5534C;
+    background: #86c54c;
 }
 .read-more a {
     position: relative;
@@ -7562,7 +7562,7 @@ ul.wpb_thumbnails-fluid > li {
     text-align: center;
 }
 .style-1 .cat-outer-block mark {
-    color: #E5534C;
+    color: #86c54c;
     padding: 0;
 }
 .style-1 .cat-outer-block:hover .cat_description {
@@ -7619,7 +7619,7 @@ ul.wpb_thumbnails-fluid > li {
 }
 .aboutblock-content .button_content_inner a.button {
     background: none;
-    color: #E5534C;
+    color: #86c54c;
     position: relative;
     padding: 0;
 }
@@ -7629,7 +7629,7 @@ ul.wpb_thumbnails-fluid > li {
 }
 .aboutblock-content .button_content_inner a.button:after {
     position: absolute;
-    background: #E5534C;
+    background: #86c54c;
     left: 0;
     right: 0;
     bottom: -2px;
@@ -7763,7 +7763,7 @@ ul.wpb_thumbnails-fluid > li {
     border: 0;
 }
 #categorytab .resp-tabs-list li.resp-tab-active, #categorytab .resp-tabs-list li:hover {
-    background-color: #E5534C;
+    background-color: #86c54c;
 }
 #categorytab .resp-tabs-list li.resp-tab-active .tab-title, #categorytab .resp-tabs-list li:hover .tab-title {
     color: #fff;
@@ -7772,7 +7772,7 @@ ul.wpb_thumbnails-fluid > li {
     position: absolute;
     content: "";
     top: 0;
-    background: #E5534C;
+    background: #86c54c;
     right: -7px;
     height: 18px;
     width: 18px;
@@ -8144,7 +8144,7 @@ ul.wpb_thumbnails-fluid > li {
     padding-bottom: 7px;
 }
 .category_link ul.category_link_inner li a:hover  {
-    color: #E5534C;    
+    color: #86c54c;    
 }
 .category_link ul.category_link_inner li a:before {
     content: "\f105";
@@ -8172,7 +8172,7 @@ ul.wpb_thumbnails-fluid > li {
     padding-top: 25px;
 }
 .category_link .link-text:hover {
-    color: #E5534C;
+    color: #86c54c;
     border-bottom: 2px solid #c7d5f5;
 }
 /* Woo Category Slider CSS*/
@@ -8236,7 +8236,7 @@ ul.wpb_thumbnails-fluid > li {
     overflow: hidden;
 }*/
 /*.widgets-blog-posts .entry-date a {
-    color: #E5534C;
+    color: #86c54c;
 }*/
 /* footer blog css end */
 .home-featured-carousel .product-detail .product_title {

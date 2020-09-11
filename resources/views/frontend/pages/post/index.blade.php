@@ -67,6 +67,10 @@ use App\Models\backend\ProductItem;
         
     </style>
     <div class="main-content-inner full-width">
+        <nav class="woocommerce-breadcrumb">
+            <span><a href="{{ url('/') }}">Trang chủ</a></span> /
+            <span>{{ $data['title'] }}</span>
+        </nav>
         @foreach ($list_posts as $item)
         @php
             if ( !empty( $item->created_at ) ) {

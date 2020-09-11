@@ -114,7 +114,7 @@ $class_col_hide = 'hide';
     @endif
 </footer> --}}
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer" style="margin-top: 4rem">
     <div class="theme-container">
         <div class="footer-top">
             <div id="footer-widget-area">
@@ -201,15 +201,13 @@ $class_col_hide = 'hide';
                 </div>
             </div>
         </div>
-        <div>
-            {!! $footers->footer_copyright !!}
-        </div>
     </div>
-    {{-- <div class="footer-bottom">
-        <div class="theme-container">
+    <div class="footer-bottom">
+        <span style="text-align: center">{!! $footers->footer_copyright !!}</span>
+        {{-- <div class="theme-container">
             <div class="site-info">
-                <div class="footer-bottom-left">
-                    {!! $footers->footer_copyright !!}
+                <div class="footer-bottom-left" style="text-align: center">
+                    
                 </div>
                 <div class="footer-bottom-right">
                     <aside id="accepted_payment_methods-3" class="widget widget_accepted_payment_methods">
@@ -222,13 +220,31 @@ $class_col_hide = 'hide';
                     </aside>
                 </div>
             </div>
-        </div>
-    </div> --}}
+        </div> --}}
+    </div>
 </footer>
 
-{{-- <div class="add-cart-success" id="add-cart-success">
-    <i class="fa fa-cart-arrow-down cart-bag" aria-hidden="true"></i> Thêm thành công vào giỏ hảng
-</div> --}}
+<style>
+    #add-cart-success {
+        display: none;
+        height: 40px;
+        background: #86c54c;
+        color: #fff;
+        border-radius: 10px;
+        position: fixed;
+        right: 27px;
+        top: 20px;
+        font-size: 14px;
+        padding: 12px 15px;
+        z-index: 1000;
+    }
+    #add-cart-success i {
+        font-size: 30px;
+    }
+</style>
+<div class="add-cart-success" id="add-cart-success">
+    <i class="fa fa-cart-arrow-down cart-bag" aria-hidden="true"></i> Thêm thành công vào giỏ hàng
+</div>
 
 @if (!empty($scripts->script_footer))
     {!! $scripts->script_footer !!}

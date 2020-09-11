@@ -19,7 +19,7 @@
         <div class="main_inner">
           <div class="page-title header" style="display:block">
             <div class="page-title-inner">
-              <h3 class="entry-title-main">{{ $data['title'] }}</h3>
+              <h3 class="entry-title-main">{{ $data['title'] ?? '' }}</h3>
             </div>
           </div>
           <!-- Contains page content -->
@@ -34,6 +34,9 @@
       <!-- Cart -->
       {{-- @include('frontend.includes.cart') --}}
       <!-- End Cart -->
+      <div class="backtotop">
+        <a id="to_top" href="#" style="display: inline;"></a>
+      </div>
     </div>
     <!--end wrapper -->
 

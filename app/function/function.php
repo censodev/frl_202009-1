@@ -365,6 +365,11 @@ use App\Models\backend\Url;
         return $html;
     }
 
+    function render_products_list($products_list)
+    {
+        return view('frontend.includes.products-list', ['list_product' => $products_list]);
+    }
+
     function create_array_category_menu(&$categories) {
          foreach ($categories as &$category) {
              if($category->type == 4 ){

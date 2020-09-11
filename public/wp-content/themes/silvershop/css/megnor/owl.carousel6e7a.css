@@ -59,12 +59,12 @@
     left: auto;
 }
 /*.owl-theme .owl-buttons div.owl-prev:hover, .owl-theme .owl-buttons div.owl-next:hover {
-    background-color: #E5534C;
-    border: 1px solid #E5534C;
+    background-color: #86c54c;
+    border: 1px solid #86c54c;
 }*/
 .owl-theme .owl-buttons div.owl-prev:hover:after,
 .owl-theme .owl-buttons div.owl-next:hover:after {
-    color: #E5534C;
+    color: #86c54c;
 }
 .owl-theme .owl-buttons div.owl-prev:after {
     content: "\f104";

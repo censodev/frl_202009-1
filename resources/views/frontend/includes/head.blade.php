@@ -182,7 +182,7 @@ a {
 color: #000000;
 }
 a:hover, li.product a:hover .product-name, .entry-meta a:hover, .tabs a.current, a.active, .entry-thumbnail .comments-link a:hover, .cat-outer-block .cat_description a:hover, .post-detail a:hover, .current-cat > a, .cart-label:hover {
-color: #E5534C;
+color: #86c54c;
 }
 .site-footer .widget-title {
 color: #FFFFFF;
@@ -191,7 +191,7 @@ color: #FFFFFF;
 color: #9E9E9E;
 }
 .footer a:hover, .footer .footer-links li a:hover, .site-footer a:hover {
-color: #E5534C;
+color: #86c54c;
 }
 .footer-outer {
 background-color: rgba(27,27,25,1);
@@ -216,13 +216,13 @@ color: #000000;
 color: #000000;
 }
 .mega-menu ul li a:hover, .mega-menu .current_page_item > a {
-color: #E5534C;
+color: #86c54c;
 }
 .mega-menu ul li .sub a {
 color: #000000;
 }
 .mega-menu ul li .sub a:hover {
-color: #E5534C;
+color: #86c54c;
 }
 .mega-menu ul li .sub {
 background-color: #FFFFFF;
@@ -237,7 +237,7 @@ color: #9E9E9E;
 }
 .topbar-link-toggle:hover, .topbar-link-toggle:hover::before,
 .topbar-outer a:hover {
-color: #E5534C;
+color: #86c54c;
 }
 .site-header, .sticky-menu .header-style {
 background-color: rgba(255,255,255,1);
@@ -246,7 +246,7 @@ background-color: rgba(255,255,255,1);
 background-color: rgba(255,255,255,1);
 }
 .header-offer-link{
-color: #E5534C;
+color: #86c54c;
 }
 body {
 font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -255,7 +255,7 @@ font-family: 'Roboto', Arial, Helvetica, sans-serif;
 .woocommerce-page input.button:hover, .woocommerce #content input.button.disabled, .woocommerce #content input.button:disabled, .woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce-page #content input.button.disabled, .woocommerce-page #content input.button:disabled, .woocommerce-page #respond input#submit.disabled, .woocommerce-page #respond input#submit:disabled, .woocommerce-page a.button.disabled, .woocommerce-page a.button:disabled, .woocommerce-page button.button.disabled, .woocommerce-page button.button:disabled, .woocommerce-page input.button.disabled, .woocommerce-page input.button:disabled, .loadgridlist-wrapper .woocount,
 .woocommerce .yith-wcwl-add-to-wishlist a.add_to_wishlist, .woocommerce ul.products li.product .yith-wcwl-wishlistaddedbrowse a, .woocommerce ul.products li.product .yith-wcwl-wishlistaddedbrowse a,
 .woocommerce ul.products li.product .yith-wcwl-wishlistexistsbrowse a, .woocommerce-page ul.products li.product .yith-wcwl-wishlistexistsbrowse a {
-background-color: rgba(229,83,76,1);
+background-color: #df2121;
 color: #FFFFFF;
 font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -273,7 +273,7 @@ color: #FFFFFF;
 .home-featured-carousel .product-detail .product_type_variable,
 .feature-image-wrapper .product-block-hover .yith-wcwl-wishlistexistsbrowse a:before,
 .feature-image-wrapper .product-block-hover .yith-wcwl-add-to-wishlist{
-background-color: rgba(229,83,76,1);
+background-color: #df2121;
 color: #FFFFFF;
 }
 .woocommerce ul.products li.product .product_type_simple.button:hover, .woocommerce-page ul.products li.product .product_type_simple.button:hover, .woocommerce ul.products li.product .product_type_grouped.button:hover, 
@@ -343,6 +343,10 @@ color: #FFFFFF;
     }
     .shopping-cart-delete {
         align-self: self-start;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {  
+        opacity: 1 !important;
     }
 </style>
 

@@ -147,6 +147,10 @@ $footer_contact_info = !empty( $footers->footer_contact_info ) ? json_decode( $f
 
     </div> --}}
     <div class="main-content-inner full-width">
+        <nav class="woocommerce-breadcrumb">
+            <span><a href="{{ url('/') }}">Trang chủ</a></span> /
+            <span>{{ $data['title'] }}</span>
+        </nav>
         <div id="main-content" class="main-content full-width box-page">
             <div id="primary" class="content-area">
                 <div id="content" class="site-content" role="main">
@@ -184,7 +188,7 @@ $footer_contact_info = !empty( $footers->footer_contact_info ) ? json_decode( $f
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
                                             <div class="shortcode-title left">
-                                                <h1 class="normal-title">LIÊN HỆ CHÚNG TÔI</h1>
+                                                <h1 class="normal-title" style="margin-top: 2rem">LIÊN HỆ CHÚNG TÔI</h1>
                                             </div>
                                         </div>
                                     </div>

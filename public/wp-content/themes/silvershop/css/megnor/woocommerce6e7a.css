@@ -485,7 +485,7 @@ a.woocommerce-product-gallery__trigger {
     color:#000000;
 }
 .woocommerce-tabs ul.tabs li.active a, .woocommerce-tabs ul.tabs li a:hover {
-    background-color: #e5534c;
+    background-color: #86c54c;
     color:#ffffff; 
 }
 .woocommerce-tabs .panel {
@@ -1378,7 +1378,7 @@ p.demo_store {
     left: 0;
     position: absolute;
     bottom: 0;
-    background: #E5534C;
+    background: #86c54c;
 }
 .products.list .sale-per {
     position: static;
@@ -1801,8 +1801,8 @@ woocommerce .woocommerce-ordering select,
 }
 .woocommerce-pagination span.current,
 .woocommerce-pagination a:hover {
-    background: #e5534c;
-    border-color: #e5534c;
+    background: #86c54c;
+    border-color: #86c54c;
     color: #ffffff;
 }
 .woocommerce ul.products li.product .button.loading:after {
@@ -3202,7 +3202,7 @@ woocommerce .woocommerce-ordering select,
 }
 .woocommerce .widget_price_filter .price_slider_amount .button:hover,
 .woocommerce-page .widget_price_filter .price_slider_amount .button:hover { 
-    background-color: #E5534C;
+    background-color: #86c54c;
     color: #ffffff;
 }*/
 .price_slider_amount .price_label {
@@ -3371,7 +3371,7 @@ woocommerce .woocommerce-ordering select,
 }
 .gridlist-toggle a#list.active:before, .gridlist-toggle a#list:hover:before,
 .gridlist-toggle a#grid.active:before, .gridlist-toggle a#grid:hover:before {
-    color: #e5534c;
+    color: #86c54c;
 }
 .woocommerce ul.products.list li.product hr {
     height: 0;
@@ -3704,7 +3704,7 @@ ul.products.list .yith-wcwl-add-to-wishlist .ajax-loading {
     line-height: 45px;
 }
 input[type="number"] {
-    -moz-appearance: textfield;
+    /* -moz-appearance: textfield; */
 }
 .quantity input.plus,
 .quantity input.minus {
@@ -3825,7 +3825,7 @@ input[type="number"] {
 .woocommerce .entry-summary a.compare.button.added:hover,
 .woocommerce .entry-summary .yith-wcwl-wishlistexistsbrowse a:hover:before,
 .woocommerce .entry-summary .compare.button:hover:before, .woocommerce .entry-summary .compare.button:hover::before, .woocommerce .entry-summary a.compare.button.added:hover::before {
-    color: #e5534c;
+    color: #86c54c;
 }
 .summary.entry-summary .compare.button.added::before {
     content: '\f00c';

@@ -35,7 +35,7 @@
 }
 .style1 #tab ul li a.current,
 .style1 #tab ul li a:hover {
-    background: #E5534C;
+    background: #86c54c;
     color: #FFF;
 }
 .style2.horizontal_tab .tab_groupcontent {
@@ -103,7 +103,7 @@
     border-bottom: none;
     border-left: 1px solid #ebebeb;
     border-right: 1px solid #ebebeb;
-    border-top: 3px solid #E5534C;
+    border-top: 3px solid #86c54c;
 }
 .style3 #tab ul li a {
     background: none;
@@ -145,7 +145,7 @@
     border-right: none;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
-    border-left: 3px solid #E5534C;
+    border-left: 3px solid #86c54c;
 }
 .vertical_tab.style3 #tab ul li {
     margin: 0 -1px 0 0;
@@ -898,12 +898,12 @@
 .pricing_wrapper .selected .pricing_top,
 .pricing_wrapper:hover .pricing_button a#pricing-btn,
 .pricing_wrapper .selected .pricing_button a#pricing-btn {
-    background: #E5534C;
+    background: #86c54c;
     color: #fff;
 }
 .pricing_wrapper:hover .pricing_wrapper_inner,
 .pricing_wrapper:hover .pricing_button a#pricing-btn, .pricing_wrapper .selected .pricing_button a#pricing-btn {
-    border-color: #E5534C;
+    border-color: #86c54c;
 }
 .pricing_wrapper .selected {
     margin-top: -10px;
@@ -1446,7 +1446,7 @@
 .service-list .icon-image::before {
     font-family: fontawesome;
     font-size: 29px;
-    color: #e5534c;
+    color: #86c54c;
 }
 .service-icon-content {
     overflow: hidden;
@@ -1659,7 +1659,7 @@ blockquote b {
     color: #fff;
     width: 40px;
     margin: 0;
-    background: #e5534c;
+    background: #86c54c;
     border-radius: 50px;
     height: 40px;
     line-height: 40px;
@@ -1710,7 +1710,7 @@ Custom Testimonial Start
 .custom-testimonial .testimonial-title a {
     text-transform: uppercase;
     font-weight: 600;
-    color: #E5534C;
+    color: #86c54c;
     font-size: 14px;
 }
 .custom-testimonial .testimonial-designation {

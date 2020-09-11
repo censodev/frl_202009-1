@@ -119,13 +119,15 @@ $session_agency = session('data_agency');
                 <div class="header-left">
                     <!-- Header LOGO-->
                     <div class="header-logo">
-                        <a href="../index.html" title="Silvershop" rel="home">
-                            <img alt="SilverShop" src="../wp-content/uploads/2019/11/logo.png" /> </a>
+                        <a href="{{ url('/') }}" title="Trang chủ" rel="home">
+                            <img style="max-height:42px" src="{{ $logo_top }}" alt="{{ $alt_image }}" title="{{ $title_image }}">
+                        </a>
                     </div>
                     <!-- Header Mob LOGO-->
                     <div class="header-mob-logo">
-                        <a href="../index.html" title="Silvershop" rel="home">
-                            <img alt="SilverShop" src="../wp-content/uploads/2019/11/mob-logo.png" /> </a>
+                        <a href="{{ url('/') }}" title="Trang chủ" rel="home">
+                            <img style="max-height:36px" src="{{ $logo_top }}" alt="{{ $alt_image }}" title="{{ $title_image }}">
+                        </a>
                     </div>
                 </div>
                 <!-- Start header_center -->
@@ -141,7 +143,7 @@ $session_agency = session('data_agency');
                                     <option value="{{ $category->id }}">{{ $category->title }}</option>
                                 @endforeach
                             </select> --}}
-                            <input type="search" class="search-field" placeholder="Search Products&hellip;" value=""
+                            <input type="search" class="search-field" placeholder="Tìm kiếm&hellip;" value=""
                                 name="query" title="Search for:" style="border-left:1px solid #ebebeb"/>
                             <input type="submit" value="Search" />
                         </form>
@@ -364,9 +366,9 @@ $session_agency = session('data_agency');
                             <div class="shopping_cart tog" title="View your shopping cart">
                                 <div class="cart-icon"></div>
                                 <div class="cart-qty">
-                                    <span class="cart-label">My Cart</span>
+                                    <span class="cart-label">Giỏ Hàng</span>
                                     <a class="cart-contents" href="#" title="View your shopping cart">
-                                        <span class="count-style">{{ !empty($carts) ? count($carts) : 0 }}</span> items
+                                        <span class="count-style">{{ !empty($carts) ? count($carts) : 0 }}</span> sản phẩm
                                     </a>
                                 </div>
                             </div>
@@ -390,8 +392,7 @@ $session_agency = session('data_agency');
                                                         <span>{{ number_format($item['total'], 0, '.', '.') }} đ</span>
                                                     </div>
                                                     <div class="shopping-cart-delete">
-                                                        <a href="#" data-id="{{ $item['id'] }}"><i class="fa fa-times"
-                                                                aria-hidden="true"></i></a>
+                                                        <a data-id="{{ $item['id'] }}"><i class="fa fa-times"></i></a>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -404,8 +405,9 @@ $session_agency = session('data_agency');
                                     </div>
                                     <div class="shopping-cart-btn">
                                         <a style="background-color: transparent;
-                                                border: 1px solid #eeeeee;
-                                                color: #242424;
+                                                margin-top: 10px;
+                                                border: 1px solid #df2121;
+                                                color: #df2121;
                                                 display: block;
                                                 font-size: 14px;
                                                 font-weight: 500;
@@ -427,7 +429,7 @@ $session_agency = session('data_agency');
                 <div class="category-list">
                     <div class="box-category-heading">
                         <div class="box-category">
-                            Shop By Categories </div>
+                            Danh Mục </div>
                     </div>
                     <div class="category-box">
                         <div class="home-category widget_product_categories">
