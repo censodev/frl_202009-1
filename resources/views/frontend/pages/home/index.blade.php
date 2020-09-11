@@ -21,37 +21,38 @@
 
         @php
         $related_sliders = $data['related_sliders'];
-        // $related_partners = $data['related_partners'];
+        $related_partners = $data['related_partners'];
+        $related_banners = $data['related_banners'];
         $related_hots = $data['related_hots'];
         $related_products_hot = $data['related_products_hot'];
         $related_products_sale = $data['related_products_sale'];
         // $related_hot2s = $data['related_hot2s'];
-        $related_posts = $data['related_posts'];
-        $related_endows = $data['related_endows'];
+        // $related_posts = $data['related_posts'];
+        // $related_endows = $data['related_endows'];
         // $related_certifies = $data['related_certifies'];
 
         // $related_tvs = $data['related_tvs'];
         // $related_newspapers = $data['related_newspapers'];
-        $feedbacks = $data['feedbacks'];
+        // $feedbacks = $data['feedbacks'];
 
         $funfact_number = json_decode( $home_default->funfact_number );
         $funfact_icon = json_decode( $home_default->funfact_icon );
         $funfact_description = json_decode( $home_default->funfact_description );
 
-        $why_title = json_decode( $home_default->why_title );
-        $why_icon = json_decode( $home_default->why_icon );
-        $why_description = json_decode( $home_default->why_description );
+        // $why_title = json_decode( $home_default->why_title );
+        // $why_icon = json_decode( $home_default->why_icon );
+        // $why_description = json_decode( $home_default->why_description );
 
-        $services_name = json_decode( $home_default->services_name );
-        $services_url = json_decode( $home_default->services_url );
-        $services_description = json_decode( $home_default->services_description );
+        // $services_name = json_decode( $home_default->services_name );
+        // $services_url = json_decode( $home_default->services_url );
+        // $services_description = json_decode( $home_default->services_description );
 
-        $video_hot_title = json_decode( $home_default->video_hot_title );
-        $video_hot_embed = json_decode( $home_default->video_hot_embed );
+        // $video_hot_title = json_decode( $home_default->video_hot_title );
+        // $video_hot_embed = json_decode( $home_default->video_hot_embed );
 
-        $album_hot_title = json_decode( $home_default->album_hot_title );
-        $album_hot_alt_images = json_decode( $home_default->album_hot_alt_images );
-        $album_hot_images = json_decode( $home_default->album_hot_images );
+        // $album_hot_title = json_decode( $home_default->album_hot_title );
+        // $album_hot_alt_images = json_decode( $home_default->album_hot_alt_images );
+        // $album_hot_images = json_decode( $home_default->album_hot_images );
 
         @endphp
 
@@ -70,6 +71,8 @@
                                         <!-- counter Section -->
                                         @include('frontend.pages.home.partial.counter')
                                         <!-- End counter Section -->
+
+                                        @include('frontend.pages.home.partial.banner')
 
                                         {{-- Introduce --}}
                                         {{-- @include('frontend.pages.home.partial.about') --}}
@@ -117,6 +120,8 @@
 
                                         {{-- Fb cmt --}}
                                         {{-- @include('frontend.pages.home.partial.fb-comments') --}}
+                                    
+                                        @include('frontend.pages.home.partial.partner')
                                     </div>
                                 </article>
                             </div>

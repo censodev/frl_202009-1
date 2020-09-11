@@ -260,14 +260,13 @@ use App\Models\backend\ProductItem; ?>
 
 
 
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> --}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
     <style>
         .page-title .entry-title-main { display: none !important; }
-        .quantity input.qty::-webkit-inner-spin-button, 
-        .quantity input.qty::-webkit-outer-spin-button {  
-            opacity: 1 !important;
-        }
     </style>
 
     <div class="main-content-inner left-sidebar">
@@ -283,81 +282,144 @@ use App\Models\backend\ProductItem; ?>
                         <div id="product-1364"
                             class="has-post-thumbnail product type-product post-1364 status-publish first instock product_cat-awabox-fullerm product_cat-coffee-board product_cat-excelscoffee product_cat-machines product_cat-milk-items product_cat-oxfull-mitron product_cat-varieties featured shipping-taxable purchasable product-type-simple">
                             
+                            {{-- <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
+                                data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;"><a href="#"
+                                    class="woocommerce-product-gallery__trigger">🔍</a>
+                                <div class="flex-viewport" style="overflow: hidden; position: relative; height: 684px;">
+                                    <figure class="woocommerce-product-gallery__wrapper"
+                                        style="width: 1400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image flex-active-slide"
+                                            style="width: 528px; float: left; display: block; position: relative; overflow: hidden;"><a
+                                                href="../../wp-content/uploads/2019/12/16.jpg"><img width="528" height="684"
+                                                    src="../../wp-content/uploads/2019/12/16-528x684.jpg" class="wp-post-image" alt="" title="16"
+                                                    data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-10x13.jpg 10w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a><img role="presentation" alt=""
+                                                src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
+                                                class="zoomImg"
+                                                style="position: absolute; top: -47.5848px; left: -199.405px; opacity: 0; width: 772px; height: 1000px; border: none; max-width: none; max-height: none;">
+                                        </div><span class="onsale">-13%</span>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a href="../../wp-content/uploads/2019/12/6.jpg"><img
+                                                    width="528" height="684" src="../../wp-content/uploads/2019/12/6-528x684.jpg" class="" alt=""
+                                                    title="6" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a
+                                                href="../../wp-content/uploads/2019/12/15.jpg"><img width="528" height="684"
+                                                    src="../../wp-content/uploads/2019/12/15-528x684.jpg" class="" alt="" title="15" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a
+                                                href="../../wp-content/uploads/2019/12/16.jpg"><img width="528" height="684"
+                                                    src="../../wp-content/uploads/2019/12/16-528x684.jpg" class="" alt="" title="16" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-10x13.jpg 10w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a
+                                                href="../../wp-content/uploads/2019/12/17.jpg"><img width="528" height="684"
+                                                    src="../../wp-content/uploads/2019/12/17-528x684.jpg" class="" alt="" title="17" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a
+                                                href="../../wp-content/uploads/2019/12/18.jpg"><img width="528" height="684"
+                                                    src="../../wp-content/uploads/2019/12/18-528x684.jpg" class="" alt="" title="18" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                        <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-100x100.jpg"
+                                            data-thumb-alt="" class="woocommerce-product-gallery__image"
+                                            style="width: 528px; float: left; display: block;"><a href="../../wp-content/uploads/2019/12/1.jpg"><img
+                                                    width="528" height="684" src="../../wp-content/uploads/2019/12/1-528x684.jpg" class="" alt=""
+                                                    title="1" data-caption=""
+                                                    data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg"
+                                                    data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg"
+                                                    data-large_image_width="772" data-large_image_height="1000"
+                                                    srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-10x13.jpg 10w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg 772w"
+                                                    sizes="(max-width: 528px) 100vw, 528px" draggable="false"></a></div>
+                                    </figure>
+                                </div>
+                                <ol class="flex-control-nav flex-control-thumbs owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <div class="owl-wrapper-outer">
+                                        <div class="owl-wrapper" style="width: 1316px; left: 0px; display: block;">
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-100x100.jpg"
+                                                        class="flex-active" draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/6-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                            <div class="owl-item" style="width: 94px;">
+                                                <li><img src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-100x100.jpg"
+                                                        draggable="false"></li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-controls clickable">
+                                        <div class="owl-buttons">
+                                            <div class="owl-prev">prev</div>
+                                            <div class="owl-next">next</div>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </div> --}}
                             <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
                                 data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
-                                <figure class="woocommerce-product-gallery__wrapper">
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/18.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/18-528x684.jpg" class="wp-post-image"
-                                                alt="" title="18" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/18.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/14.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/14-528x684.jpg" class="" alt=""
-                                                title="14" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14-50x65.jpg 50w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/14.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/17.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/17-528x684.jpg" class="" alt=""
-                                                title="17" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/17.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/16.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/16-528x684.jpg" class="" alt=""
-                                                title="16" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16-10x13.jpg 10w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/16.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/15.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/15-528x684.jpg" class="" alt=""
-                                                title="15" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/15.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/8.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/8-528x684.jpg" class="" alt=""
-                                                title="8" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/8.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
-                                    <div data-thumb="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-100x100.jpg"
-                                        data-thumb-alt="" class="woocommerce-product-gallery__image"><a
-                                            href="../../wp-content/uploads/2019/12/1.jpg"><img width="528" height="684"
-                                                src="../../wp-content/uploads/2019/12/1-528x684.jpg" class="" alt=""
-                                                title="1" data-caption=""
-                                                data-src="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg"
-                                                data-large_image="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg"
-                                                data-large_image_width="772" data-large_image_height="1000"
-                                                srcset="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-528x684.jpg 528w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-194x251.jpg 194w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-232x300.jpg 232w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-768x995.jpg 768w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1-10x13.jpg 10w, http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/uploads/2019/12/1.jpg 772w"
-                                                sizes="(max-width: 528px) 100vw, 528px" /></a></div>
+                                <figure class="">
+                                    @foreach ($images as $key => $item)
+                                        <div class="" style="{{ $key != 0 ? 'display:none' : '' }}">
+                                            <a data-fancybox="images" href="{{ $item }}">
+                                                <img width="528" height="684"
+                                                    src="{{ $item }}" class="wp-post-image" alt="{{ $alt_image[$key] }}" title="{{ $title_image[$key] }}" />
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </figure>
                             </div>
+                        
 
                             <div class="summary entry-summary">
                                 <h1 class="product_title entry-title">{{ $product_detail->title }}</h1>

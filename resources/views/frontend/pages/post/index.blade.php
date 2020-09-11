@@ -105,41 +105,41 @@ use App\Models\backend\ProductItem;
                         </div>
                     </div>
                     <div class="post-info">
-                        <a href="{{ url( $item->alias ) }}"
+                        {{-- <a href="{{ url( $item->alias ) }}"
                             rel="bookmark"></a>
                         <div class="blog-icon-outer">
                             <span class="blog-icon"></span>
-                        </div>
+                        </div> --}}
                         <div class="post-info-inner">
                             <div class="entry-header">
                                 <div class="entry-meta">
                                     <div class="meta-inner">
                                         <span class="entry-date">
                                             <a href="#" title="{{ $post_date }}" rel="bookmark">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                {{ $post_date }} /
-                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {{-- <i class="fa fa-clock-o" aria-hidden="true"></i> --}}
+                                                {{ $post_date }}
+                                                {{-- <i class="fa fa-eye" aria-hidden="true"></i>
                                                 {{ $item->view ?? 0 }} /
                                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                                {{ $item->rating ?? 0 }}
+                                                {{ $item->rating ?? 0 }} --}}
                                             </a>
                                         </span>
                                     </div>
                                 </div>
                                 <h1 class="entry-title">
-                                    <a href="{{ url( $item->alias ) }}" rel="bookmark">{{ $item->title }}</a>
+                                    <a href="{{ url( $item->alias ) }}" rel="bookmark" style="font-size: 14px">{{ $item->title }}</a>
                                 </h1>
                             </div>
                             <!-- .entry-header -->
                             <div class="entry-content-other">
                                 <div class="entry-summary">
-                                    <div class="excerpt">
+                                    <div class="excerpt" style="color: #808080">
                                         {!! $item->sapo !!}
-                                        <div class="read-more">
+                                        {{-- <div class="read-more">
                                             <a class="read-more-link"
                                                 href="{{ url( $item->alias ) }}">Read
                                                 More</a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <!-- .entry-summary -->

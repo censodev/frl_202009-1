@@ -541,7 +541,8 @@ a.woocommerce-product-gallery__trigger {
 .woocommerce-page #content .quantity input::-webkit-outer-spin-button,
 .woocommerce-page #quantity input::-webkit-inner-spin-button,
 .woocommerce-page #quantity input::-webkit-outer-spin-button {
-    display: none;
+    /* display: none; */
+    opacity: 1;
 }
 .woocommerce .related,
 .woocommerce .upsells.products,

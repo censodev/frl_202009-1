@@ -59,14 +59,23 @@ class HomeController extends Controller
                     ->get();
             }
 
-            // $relatedPartnerIds = $data['related_partners'] = [];
-            // if(isset($data['home_default']->related_partner) && !empty($data['home_default']->related_partner)) {
+            $relatedBannerIds = $data['related_banners'] = [];
+            if(isset($data['home_default']->related_banner) && !empty($data['home_default']->related_banner)) {
 
-            //     $relatedPartnerIds          = json_decode($data['home_default']->related_partner,true);
-            //     $data['related_partners']   = Partner::whereIn('id', $relatedPartnerIds)
-            //         ->where('status',1)
-            //         ->get();
-            // }
+                $relatedBannerIds          = json_decode($data['home_default']->related_banner,true);
+                $data['related_banners']   = Banner::whereIn('id', $relatedBannerIds)
+                    ->where('status',1)
+                    ->get();
+            }
+
+            $relatedPartnerIds = $data['related_partners'] = [];
+            if(isset($data['home_default']->related_partner) && !empty($data['home_default']->related_partner)) {
+
+                $relatedPartnerIds          = json_decode($data['home_default']->related_partner,true);
+                $data['related_partners']   = Partner::whereIn('id', $relatedPartnerIds)
+                    ->where('status',1)
+                    ->get();
+            }
 
             $relatedHotIds = $data['related_hots'] = [];
             if(isset($data['home_default']->related_hot) && !empty($data['home_default']->related_hot)) {
