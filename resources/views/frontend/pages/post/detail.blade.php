@@ -101,7 +101,7 @@ use App\Models\backend\ProductItem; ?>
             <span><a href="{{ url($data['category_detail']->alias) }}" title="{{ $data['category_detail']->title }}">{{ $data['category_detail']->title }}</a></span> /
             <span>{{ $data['title'] }}</span>
         </nav>
-        <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail category-uncategorized">
             {{-- <img width="1200" height="500"
                 src="{{ $post_detail->images }}"
                 class="attachment-tmpmela-blog-posts-list size-tmpmela-blog-posts-list wp-post-image"
@@ -152,6 +152,11 @@ use App\Models\backend\ProductItem; ?>
                 <!-- entry-content-other -->
             </div>
         </article>
+        @if (count($related_posts) > 0)
+            <h1 style="padding-left: 25px;padding-bottom: 1rem;">Bài viết liên quan</h1>
+            {!! render_posts_list($related_posts) !!}
+        @endif
+        
         @include('frontend.includes.comment')
     </div>
 @endsection
