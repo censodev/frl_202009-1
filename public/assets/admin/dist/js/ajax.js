@@ -189,6 +189,9 @@ var Discount = {
 	listHotSelected : [],
 	listHotSelected2 : [],
     listBannerSelected : [],
+    listAboutSelected: [],
+    listAlbumSelected: [],
+    listVideoSelected: [],
     ini : function(){
     	var self = this;
 
@@ -382,6 +385,36 @@ var Discount = {
             self.searchBanner(block,isAppend);
         });
 
+        $("body").on("click", '.block-search-appliesto .about_search', function (e) {
+            var block = $(this).attr('search');
+            var isAppend =  parseInt($(this).attr('is-append'));
+
+            if(!isAppend){
+                $("#modal-lg-about").remove();
+            }
+            self.searchAbout(block,isAppend);
+        });
+
+        $("body").on("click", '.block-search-appliesto .album_search', function (e) {
+            var block = $(this).attr('search');
+            var isAppend =  parseInt($(this).attr('is-append'));
+
+            if(!isAppend){
+                $("#modal-lg-album").remove();
+            }
+            self.searchAlbum(block,isAppend);
+        });
+
+        $("body").on("click", '.block-search-appliesto .video_search', function (e) {
+            var block = $(this).attr('search');
+            var isAppend =  parseInt($(this).attr('is-append'));
+
+            if(!isAppend){
+                $("#modal-lg-video").remove();
+            }
+            self.searchVideo(block,isAppend);
+        });
+
         $("body").on("change", '.ul-item input[type="checkbox"]', function (e) {
             var isChecked = $(this).is(':checked');
             var itemID = $(this).val();
@@ -511,6 +544,24 @@ var Discount = {
         $("body").on("click", '.block-hot-2-list .remove-item__action', function (e) {
             var itemID = $(this).attr('itemID');
             self.removeHot2(itemID);
+
+        });
+
+        $("body").on("click", '.block-about-list .remove-item__action', function (e) {
+            var itemID = $(this).attr('itemID');
+            self.removeAbout(itemID);
+
+        });
+
+        $("body").on("click", '.block-album-list .remove-item__action', function (e) {
+            var itemID = $(this).attr('itemID');
+            self.removeAlbum(itemID);
+
+        });
+
+        $("body").on("click", '.block-video-list .remove-item__action', function (e) {
+            var itemID = $(this).attr('itemID');
+            self.removeVideo(itemID);
 
         });
 
@@ -1181,6 +1232,111 @@ var Discount = {
 
         });
 
+        $("body").on("click", '.addappliesto.about', function (e) {
+            var listValue = '';
+            var itemID = 0;
+            var block = '';
+            var html = '';
+            $("#modal-lg-about input[type=checkbox]:checked").each(function() {
+                var itemID = this.value;
+                var is = isInArray(itemID, self.listAboutSelected);
+                if(!is){
+                    self.listAboutSelected.push(itemID)
+                    var block  = $('#modal-lg-about .ul-item.'+itemID);
+                    var image  = $('#modal-lg-about .ul-item.'+itemID + ' img').attr('src');
+                    var title  = $('#modal-lg-about .ul-item.'+itemID + ' span.text').text();
+                    html = '<li class="ul-item '+itemID+'">\
+                                <input type="hidden" name="related_about[]" value="'+itemID+'">\
+                                <!-- drag handle -->\
+                                <span class="handle">\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                </span>\
+                                <img width="40px" height="40px" src="'+image+'">\
+                                <span class="text">\
+                                    <a href="">'+title+'</a>\
+                                </span>\
+                                <div class="tools">\
+                                    <div class="remove-item__action" itemID="'+itemID+'"><i class="fas fa-trash"></i></div>\
+                                </div>\
+                            </li>';
+                    $('.appliesto-value.block-about-list').append(html)
+                }
+            });
+            $('#modal-lg-about').modal('hide');
+
+        });
+
+        $("body").on("click", '.addappliesto.album', function (e) {
+            var listValue = '';
+            var itemID = 0;
+            var block = '';
+            var html = '';
+            $("#modal-lg-album input[type=checkbox]:checked").each(function() {
+                var itemID = this.value;
+                var is = isInArray(itemID, self.listAlbumSelected);
+                if(!is){
+                    self.listAlbumSelected.push(itemID)
+                    var block  = $('#modal-lg-album .ul-item.'+itemID);
+                    var image  = $('#modal-lg-album .ul-item.'+itemID + ' img').attr('src');
+                    var title  = $('#modal-lg-album .ul-item.'+itemID + ' span.text').text();
+                    html = '<li class="ul-item '+itemID+'">\
+                                <input type="hidden" name="related_album[]" value="'+itemID+'">\
+                                <!-- drag handle -->\
+                                <span class="handle">\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                </span>\
+                                <img width="40px" height="40px" src="'+image+'">\
+                                <span class="text">\
+                                    <a href="">'+title+'</a>\
+                                </span>\
+                                <div class="tools">\
+                                    <div class="remove-item__action" itemID="'+itemID+'"><i class="fas fa-trash"></i></div>\
+                                </div>\
+                            </li>';
+                    $('.appliesto-value.block-album-list').append(html)
+                }
+            });
+            $('#modal-lg-album').modal('hide');
+
+        });
+
+        $("body").on("click", '.addappliesto.video', function (e) {
+            var listValue = '';
+            var itemID = 0;
+            var block = '';
+            var html = '';
+            $("#modal-lg-video input[type=checkbox]:checked").each(function() {
+                var itemID = this.value;
+                var is = isInArray(itemID, self.listVideoSelected);
+                if(!is){
+                    self.listVideoSelected.push(itemID)
+                    var block  = $('#modal-lg-video .ul-item.'+itemID);
+                    var image  = $('#modal-lg-video .ul-item.'+itemID + ' img').attr('src');
+                    var title  = $('#modal-lg-video .ul-item.'+itemID + ' span.text').text();
+                    html = '<li class="ul-item '+itemID+'">\
+                                <input type="hidden" name="related_video[]" value="'+itemID+'">\
+                                <!-- drag handle -->\
+                                <span class="handle">\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                  <i class="fas fa-ellipsis-v"></i>\
+                                </span>\
+                                <img width="40px" height="40px" src="'+image+'">\
+                                <span class="text">\
+                                    <a href="">'+title+'</a>\
+                                </span>\
+                                <div class="tools">\
+                                    <div class="remove-item__action" itemID="'+itemID+'"><i class="fas fa-trash"></i></div>\
+                                </div>\
+                            </li>';
+                    $('.appliesto-value.block-video-list').append(html)
+                }
+            });
+            $('#modal-lg-video').modal('hide');
+
+        });
+
     },
     removeGallery : function(itemID,isSendAjax){
         $('.appliesto-value.block-gallery-list .ul-item.'+itemID).remove();
@@ -1232,6 +1388,15 @@ var Discount = {
     },
     removeBanner : function(itemID,isSendAjax){
         $('.appliesto-value.block-banner-list .ul-item.'+itemID).remove();
+    },
+    removeAbout : function(itemID,isSendAjax){
+        $('.appliesto-value.block-about-list .ul-item.'+itemID).remove();
+    },
+    removeAlbum : function(itemID,isSendAjax){
+        $('.appliesto-value.block-album-list .ul-item.'+itemID).remove();
+    },
+    removeVideo : function(itemID,isSendAjax){
+        $('.appliesto-value.block-video-list .ul-item.'+itemID).remove();
     },
 
     setSelected : function(newSelected){
@@ -1700,6 +1865,93 @@ var Discount = {
                 }
             },
             error: function (error) {
+                alert('Không thể tải lên dữ liệu. Vui lòng thử lại.')
+            }
+        });
+    },
+
+    searchAbout : function(block,isAppendModal){
+        var sendData = {};
+        sendData.q = $('.block-search-appliesto.'+block + ' input').val();
+        sendData.isAppendModal = isAppendModal;
+        sendData.notFindID = this.listAboutSelected;
+        $.ajax({
+            type: "GET",
+            url: '/admin/About/searchRelative',
+            data: sendData,
+            dataType: 'JSON',
+            success: function (response) {
+                html = '';
+                var msg = response.message;
+                if(response.status){
+                    if(!isAppendModal){
+                        $('body').append(response.message);
+                        $("#modal-lg-about").modal()
+                    }else{
+                        $("#modal-lg-about .block-about-list").html(response.message)
+                    }
+                }
+            },
+            error: function (error) {
+                console.log(error)
+                alert('Không thể tải lên dữ liệu. Vui lòng thử lại.')
+            }
+        });
+    },
+
+    searchAlbum : function(block,isAppendModal){
+        var sendData = {};
+        sendData.q = $('.block-search-appliesto.'+block + ' input').val();
+        sendData.isAppendModal = isAppendModal;
+        sendData.notFindID = this.listAlbumSelected;
+        $.ajax({
+            type: "GET",
+            url: '/admin/Album/searchRelative',
+            data: sendData,
+            dataType: 'JSON',
+            success: function (response) {
+                html = '';
+                var msg = response.message;
+                if(response.status){
+                    if(!isAppendModal){
+                        $('body').append(response.message);
+                        $("#modal-lg-album").modal()
+                    }else{
+                        $("#modal-lg-album .block-album-list").html(response.message)
+                    }
+                }
+            },
+            error: function (error) {
+                console.log(error)
+                alert('Không thể tải lên dữ liệu. Vui lòng thử lại.')
+            }
+        });
+    },
+
+    searchVideo : function(block,isAppendModal){
+        var sendData = {};
+        sendData.q = $('.block-search-appliesto.'+block + ' input').val();
+        sendData.isAppendModal = isAppendModal;
+        sendData.notFindID = this.listVideoSelected;
+        $.ajax({
+            type: "GET",
+            url: '/admin/Video/searchRelative',
+            data: sendData,
+            dataType: 'JSON',
+            success: function (response) {
+                html = '';
+                var msg = response.message;
+                if(response.status){
+                    if(!isAppendModal){
+                        $('body').append(response.message);
+                        $("#modal-lg-video").modal()
+                    }else{
+                        $("#modal-lg-video .block-video-list").html(response.message)
+                    }
+                }
+            },
+            error: function (error) {
+                console.log(error)
                 alert('Không thể tải lên dữ liệu. Vui lòng thử lại.')
             }
         });

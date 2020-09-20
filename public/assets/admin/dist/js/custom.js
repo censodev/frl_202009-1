@@ -393,7 +393,7 @@ function run_trigger() {
         var search = 'in' + capitalizeFirstLetter(type);
         var ul_class = 'block-' + type + '-list';
 
-        button.removeClass("article_search product_search slider_search newspaper_search tv_search endow_search");
+        button.removeClass("article_search product_search slider_search newspaper_search tv_search endow_search about_search album_search video_search");
         button.removeAttr('disabled');
         button.addClass(button_class);
         button.attr('data-target', target);

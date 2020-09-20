@@ -5,6 +5,9 @@
     use App\Models\backend\Newspaper;
     use App\Models\backend\Tv;
     use App\Models\backend\Endow;
+    use App\Models\backend\About;
+    use App\Models\backend\Image;
+    use App\Models\backend\Video;
 @endphp
 
 @extends($data->layout)
@@ -246,6 +249,18 @@
                                                                 $listItems              = Endow::whereIn('id', $Ids)->where('status',1)->get();
                                                                 $related                = 'related_endow[]';
                                                             }
+                                                            if($type == 'about'){
+                                                                $listItems              = About::whereIn('id', $Ids)->where('status',1)->get();
+                                                                $related                = 'related_about[]';
+                                                            }
+                                                            if($type == 'album'){
+                                                                $listItems              = Image::whereIn('id', $Ids)->where('status',1)->get();
+                                                                $related                = 'related_album[]';
+                                                            }
+                                                            if($type == 'video'){
+                                                                $listItems              = Video::whereIn('id', $Ids)->where('status',1)->get();
+                                                                $related                = 'related_video[]';
+                                                            }
                                                         }
 
                                                     @endphp
@@ -277,6 +292,8 @@
                                                                                 </span>
                                                                             @if($type == 'product')
                                                                                 <img width="40px" height="40px" src="{{ $images[0] }}" title="{{ $title_image[0] }}" alt="{{ $alt_image[0] }}">
+                                                                            @elseif($type == 'album' || $type == 'video')
+                                                                                <img src="{{ $listItems->image }}" width="40px" height="40px">
                                                                             @else
                                                                                 <img src="{{ $images }}" width="40px" height="40px">
                                                                             @endif

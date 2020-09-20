@@ -131,7 +131,8 @@ class ShoppingController extends Controller
                         </tr>';
         $table_customer .= '</tbody></table>';
 
-
+        // FAILED FROM HERE
+        dd(QrCode::format('png')->size(300)->generate(123));
         $content_qrcode = QrCode::format('png')->size(300)->generate(time());
         $name_img_qr_code = time() . '.png';
         Storage::disk('qr_code')->put($name_img_qr_code, $content_qrcode);

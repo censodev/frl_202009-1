@@ -33,6 +33,9 @@ class LandingPageController extends Controller
         'newspaper' => 'Báo Chí',
         'tv'        => 'Truyền Hình',
         'endow'     => 'Hậu Mãi',
+        'about'     => 'Giới Thiệu',
+        'album'     => 'Album',
+        'video'     => 'Video',
     ];
     private $keyword = '';
     private $layout  = 'backend.layouts.';
@@ -112,6 +115,15 @@ class LandingPageController extends Controller
         }
         if($type === 'endow'){
             $items = !empty( $request->related_endow ) ? Genratejsonarray( $request->related_endow ) : '';
+        }
+        if($type === 'about'){
+            $items = !empty( $request->related_about ) ? Genratejsonarray( $request->related_about ) : '';
+        }
+        if($type === 'album'){
+            $items = !empty( $request->related_album ) ? Genratejsonarray( $request->related_album ) : '';
+        }
+        if($type === 'video'){
+            $items = !empty( $request->related_video ) ? Genratejsonarray( $request->related_video ) : '';
         }
 
         return $items;

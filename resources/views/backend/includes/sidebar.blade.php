@@ -167,6 +167,81 @@
           </ul>
         </li>
 
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Giới Thiệu
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right">2</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('about.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh Sách</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('about.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thêm Mới</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Album
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right">2</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('album.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh Sách</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('album.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thêm Mới</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Video
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right">2</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('video.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh Sách</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('video.create') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thêm Mới</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
 {{--          <li class="nav-item has-treeview">--}}
 {{--              <a href="#" class="nav-link">--}}
 {{--                  <i class="nav-icon fas fa-copy"></i>--}}
@@ -268,7 +343,7 @@
               </ul>
           </li>
 
-        {{-- <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
@@ -291,7 +366,7 @@
               </a>
             </li>
           </ul>
-        </li> --}}
+        </li>
 
 {{--        <li class="nav-item has-treeview">--}}
 {{--          <a href="#" class="nav-link">--}}
@@ -369,7 +444,7 @@
           </ul>
         </li>
 
-        {{-- <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
@@ -392,7 +467,7 @@
               </a>
             </li>
           </ul>
-        </li> --}}
+        </li>
 
           {{-- <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
@@ -601,7 +676,7 @@
 {{--              </a>--}}
 {{--          </li>--}}
 
-          {{-- <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
@@ -624,7 +699,7 @@
                       </a>
                   </li>
               </ul>
-          </li> --}}
+          </li>
 
           <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
