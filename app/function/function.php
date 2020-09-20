@@ -577,4 +577,9 @@ use App\Models\backend\Url;
 
         return $html;
     }
+
+    function render_sections_landing($sections)
+    {
+        return view('frontend.pages.landingpage.section', compact('sections'));
+    }
 ?>

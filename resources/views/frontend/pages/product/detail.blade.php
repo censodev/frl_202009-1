@@ -633,6 +633,14 @@ use App\Models\backend\ProductItem; ?>
                         @endif --}}
                     </main>
                 </div>
+                @if ($product_detail->landingpage_id)
+                    @php
+                        $sections = \App\Models\backend\LandingPage::find($product_detail->landingpage_id)
+                            ->items()->orderBy("ordering", 'ASC')->get();
+                    @endphp
+                    {!! render_sections_landing($sections) !!}
+                @endif
+                
                 @include('frontend.includes.comment')
             </div>
         </div>

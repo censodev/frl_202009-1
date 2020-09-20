@@ -153,6 +153,7 @@ class ProductController extends Controller
             'price'                     =>  $data_product['price_buy'][0],
             'created_by'                =>  $user_id,
             'status'                    =>  1,
+            'landingpage_id'            =>  $request->landingpage_id,
         ];
 
         try{
@@ -353,6 +354,7 @@ class ProductController extends Controller
                 'price'                     =>  $data_product['price_buy'][0],
                 'created_by'                =>  $user_id,
                 'status'                    =>  1,
+                'landingpage_id'            =>  $request->landingpage_id,
             ];
 
             try{

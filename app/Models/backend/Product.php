@@ -39,7 +39,8 @@ class Product extends Model
     	'updated_by',
     	'created_at',
     	'updated_at',
-    	'status'
+        'status',
+        'landingpage_id',
     ];
 
     public function categories(){

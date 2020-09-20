@@ -166,6 +166,18 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="">Landing Page</label>
+                                    @php
+                                        $landing_pages = \App\Models\backend\LandingPage::where('status', 1)->get();
+                                    @endphp
+                                    <select name="landingpage_id" id="" class="form-control">
+                                        <option value=""></option>
+                                        @foreach ($landing_pages as $item)
+                                            <option value="{{ $item->id }}" {{ $item->id == $product->landingpage_id ? 'selected' : '' }}>{{ $item->title }}</option>  
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <!-- Default box -->
 
