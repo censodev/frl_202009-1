@@ -13,7 +13,7 @@
     <div class="cart-main-area pt-60 pb-65">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="text-align:center">
                     @if($data->message)
                         <h5 class="text-order-success">{{ $data->message }}</h5>
                     @else
