@@ -46,5 +46,10 @@
         messageError('{{ session('error') }}', 5000);
       </script>
     @endif
+    @if ($errors->any())
+      <script type="text/javascript">
+        messageError('{{ $errors->all() }}', 5000);
+      </script>
+    @endif
   </body>
 </html>
