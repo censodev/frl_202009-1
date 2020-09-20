@@ -214,6 +214,24 @@
                                                             <textarea name="description[]" class="form-control" rows="4">{{ $section->description }}</textarea>
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Tiêu Đề Kêu Gọi Hành Động</label>
+                                                            <input name="title_action[]" class="form-control" value="{{ $section->title_action ?? '' }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Icon Kêu Gọi Hành Động</label>
+                                                            <input name="icon_action[]" class="form-control" value="{{ $section->icon_action ?? '' }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>ID Form Đăng Ký</label>
+                                                            <input name="id_action[]" class="form-control" value="{{ $section->id_action ?? '' }}">
+                                                        </div>
+                                                    </div>
 
                                                     @php
                                                         $button_class = $section->type .'_search';

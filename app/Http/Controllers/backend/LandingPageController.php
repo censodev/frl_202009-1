@@ -159,6 +159,9 @@ class LandingPageController extends Controller
             'title_image_mobile'        => $request->title_image_mobile,
             'alt_image_mobile'          => $request->alt_image_mobile,
             'description'               => $request->description,
+            'title_action'              => $request->title_action,
+            'icon_action'               => $request->icon_action,
+            'id_action'                 => $request->id_action,
         ];
 
         $data = [
@@ -191,6 +194,9 @@ class LandingPageController extends Controller
                     'title_image_mobile'    => $data_section['title_image_mobile'][$key],
                     'alt_image_mobile'      => $data_section['alt_image_mobile'][$key],
                     'description'           => $data_section['description'][$key],
+                    'title_action'          => $data_section['title_action'][$key],
+                    'icon_action'           => $data_section['icon_action'][$key],
+                    'id_action'             => $data_section['id_action'][$key],
                     'created_by'            => $user_id,
                     'status'                => 1,
                 ];
@@ -301,6 +307,9 @@ class LandingPageController extends Controller
                 'title_image_mobile'        => $request->title_image_mobile,
                 'alt_image_mobile'          => $request->alt_image_mobile,
                 'description'               => $request->description,
+                'title_action'              => $request->title_action,
+                'icon_action'               => $request->icon_action,
+                'id_action'                 => $request->id_action,
             ];
 
             $data = [
@@ -354,6 +363,9 @@ class LandingPageController extends Controller
                         'title_image_mobile'    => $data_section['title_image_mobile'][$key],
                         'alt_image_mobile'      => $data_section['alt_image_mobile'][$key],
                         'description'           => $data_section['description'][$key],
+                        'title_action'          => $data_section['title_action'][$key],
+                        'icon_action'           => $data_section['icon_action'][$key],
+                        'id_action'             => $data_section['id_action'][$key],
                         'created_by'            => $user_id,
                         'status'                => 1,
                     ];
