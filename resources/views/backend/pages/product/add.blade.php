@@ -149,7 +149,7 @@
                                         $landing_pages = \App\Models\backend\LandingPage::where('status', 1)->get();
                                     @endphp
                                     <select name="landingpage_id" id="" class="form-control">
-                                        <option value=""></option>
+                                        <option value="0"></option>
                                         @foreach ($landing_pages as $item)
                                             <option value="{{ $item->id }}">{{ $item->title }}</option>  
                                         @endforeach
