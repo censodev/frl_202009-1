@@ -18,8 +18,30 @@
             @php
                 $listItems              = Post::whereIn('id', $Ids)->where('status',1)->get();
             @endphp
-            <h1 class="big-title" style="color:#000;text-transform:uppercase!important">{{ $section->name }}</h1>
-            {!! render_posts_list($listItems) !!}
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1565957026585">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo-products woo-content products_block shop woofeature">
+                                                {!! render_posts_list($listItems) !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
 
         @if($type == 'product')
@@ -68,45 +90,289 @@
             @php
                 $listItems              = Newspaper::whereIn('id', $Ids)->where('status',1)->get();
             @endphp
-
-
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($listItems as $item)
+                                                        @php
+                                                            $images = !empty( $item->images ) ? $item->images :
+                                                            asset('assets/admin/dist/img/avatar5.png');
+                                                        @endphp
+                                                        <div style="display:inline-block" class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                <img src="{{ $images }}"
+                                                                    title="{{ $item->title_image }}" 
+                                                                    alt="{{ $item->alt_image }}" height="206"
+                                                                    width="255" />
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="{{ $item->link }}">{{ $item->name }}</a>
+                                                                <div style="text-align:center">{!! substr($item->description,0,160) !!}</div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
 
         @if($type == 'tv')
             @php
                 $listItems              = Tv::whereIn('id', $Ids)->where('status',1)->get();
             @endphp
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($listItems as $item)
+                                                        @php
+                                                            $images = !empty( $item->images ) ? $item->images :
+                                                            asset('assets/admin/dist/img/avatar5.png');
+                                                        @endphp
+                                                        <div style="display:inline-block" class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                <img src="{{ $images }}"
+                                                                    title="{{ $item->title_image }}" 
+                                                                    alt="{{ $item->alt_image }}" height="206"
+                                                                    width="255" />
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="{{ $item->link }}">{{ $item->name }}</a>
+                                                                <div style="text-align:center">{!! substr($item->description,0,160) !!}</div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
 
         @if($type == 'endow')
             @php
                 $listItems              = Endow::whereIn('id', $Ids)->where('status',1)->get();
             @endphp
-            <div class="ereaders-main-section ereaders-service-gridfull">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="ereaders-fancy-title">
-                                <h2 class="bounceIn wow">{{ $section->name }}</h2>
-                                <div class="clearfix"></div>
-                                <div class="fadeInRight wow">
-                                    {!! $section->description !!}
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($listItems as $item)
+                                                        <div style="display:inline-block" class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                {!! $item->icon !!}
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="#">{{ $item->name }}</a>
+                                                                <div style="text-align:center">{!! substr($item->description,0,160) !!}</div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="ereaders-service ereaders-service-grid fadeInUp wow">
-                                <ul class="row">
-                                    @if(!empty($listItems) && count($listItems) > 0)
-                                        @foreach($listItems as $key => $item)
-                                            <li class="col-md-4">
-                                                <div class="ereaders-service-grid-text">
-                                                    {!! $item->icon !!}
-                                                    <h5><a href="#">{{ $item->name }}</a></h5>
-                                                    {!! substr($item->description,0,160) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($type == 'album')
+            @php
+                $listItems = \App\Models\backend\Image::whereIn('id', $Ids)->where('status',1)->get();
+            @endphp
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($listItems as $item)
+                                                        @php
+                                                            $images = !empty( $item->image ) ? $item->image :
+                                                            asset('assets/admin/dist/img/avatar5.png');
+                                                        @endphp
+                                                        <div style="display:inline-block" class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                <img src="{{ $images }}"
+                                                                    title="{{ $item->title }}" 
+                                                                    alt="{{ $item->alt_image }}" height="206"
+                                                                    width="255" />
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="">{{ $item->title }}</a>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
                                                 </div>
-                                            </li>
-                                        @endforeach
-                                    @endif
-                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($type == 'video')
+            @php
+                $listItems = \App\Models\backend\Video::whereIn('id', $Ids)->where('status',1)->get();
+            @endphp
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($listItems as $item)
+                                                        @php
+                                                            $images = !empty( $item->image ) ? $item->image :
+                                                            asset('assets/admin/dist/img/avatar5.png');
+                                                        @endphp
+                                                        <div style="display:inline-block" class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                <a target="_blank" style="position:relative;display:block;width:255px;height:206px;background:#000;margin:0px auto;max-width:100%" href="{{ $item->video_url }}">
+                                                                    <img style="opacity: 70%" src="{{ $images }}"
+                                                                    title="{{ $item->title }}" 
+                                                                    alt="{{ $item->alt_image }}" height="206"
+                                                                    width="255" />
+                                                                    <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:white">
+                                                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                                                        </svg>
+                                                                    </span>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="{{ $item->video_url }}">{{ $item->title }}</a>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($type == 'about')
+            @php
+                $listItems = \App\Models\backend\About::whereIn('id', $Ids)->where('status',1)->get();
+            @endphp
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-2">
+                                                    @foreach ($listItems as $item)
+                                                        @if ($item->position == 0)
+                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;padding-right: 1rem;box-sizing: border-box;">
+                                                                {!! $item->content !!}
+                                                            </div>
+                                                        @endif    
+                                                        <div style="display: inline-block;width: 49%;padding-right: 1rem;padding-left: 1rem;box-sizing: border-box;">
+                                                            @if ($item->image)
+                                                                <img src="{{ $item->image }}" alt="{{ $item->alt_image }}">
+                                                            @else
+                                                                {!! $item->video_embed !!}
+                                                            @endif
+                                                        </div>
+                                                        @if ($item->position == 1)
+                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;box-sizing: border-box;">
+                                                                {!! $item->content !!}
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

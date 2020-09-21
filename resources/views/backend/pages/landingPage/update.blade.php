@@ -258,6 +258,7 @@
                                                             }
                                                             if($type == 'newspaper'){
                                                                 $listItems              = Newspaper::whereIn('id', $Ids)->where('status',1)->get();
+                                                                $related                = 'related_newspaper[]';
                                                             }
                                                             if($type == 'tv'){
                                                                 $listItems              = Tv::whereIn('id', $Ids)->where('status',1)->get();
@@ -312,11 +313,17 @@
                                                                                 <img width="40px" height="40px" src="{{ $images[0] }}" title="{{ $title_image[0] }}" alt="{{ $alt_image[0] }}">
                                                                             @elseif($type == 'album' || $type == 'video')
                                                                                 <img src="{{ $listItems->image }}" width="40px" height="40px">
+                                                                            @elseif($type == 'tv' || $type == 'newspaper')
+                                                                                <img src="{{ $listItems->images }}" width="40px" height="40px">
                                                                             @else
                                                                                 <img src="{{ $images }}" width="40px" height="40px">
                                                                             @endif
                                                                             <span class="text">
-                                                                                <a href="">{{ $listItems->title }}</a>
+                                                                                @if($type == 'tv' || $type == 'newspaper' || $type == 'endow')
+                                                                                    <a href="">{{ $listItems->name }}</a>
+                                                                                @else
+                                                                                    <a href="">{{ $listItems->title }}</a>
+                                                                                @endif
                                                                             </span>
                                                                             <div class="tools">
                                                                                 <div class="remove-item__action" itemID="{{ $listItems->id }}"><i class="fas fa-trash"></i></div>
