@@ -242,32 +242,32 @@
           </ul>
         </li>
 
-{{--          <li class="nav-item has-treeview">--}}
-{{--              <a href="#" class="nav-link">--}}
-{{--                  <i class="nav-icon fas fa-copy"></i>--}}
-{{--                  <p>--}}
-{{--                      Màu--}}
-{{--                      <i class="fas fa-angle-left right"></i>--}}
-{{--                      <span class="badge badge-info right">2</span>--}}
-{{--                  </p>--}}
-{{--              </a>--}}
-{{--              <ul class="nav nav-treeview">--}}
-{{--                  <li class="nav-item">--}}
-{{--                      <a href="{{ route('color.index') }}" class="nav-link">--}}
-{{--                          <i class="far fa-circle nav-icon"></i>--}}
-{{--                          <p>Danh Sách</p>--}}
-{{--                      </a>--}}
-{{--                  </li>--}}
-{{--                  <li class="nav-item">--}}
-{{--                      <a href="{{ route('color.create') }}" class="nav-link">--}}
-{{--                          <i class="far fa-circle nav-icon"></i>--}}
-{{--                          <p>Thêm Màu</p>--}}
-{{--                      </a>--}}
-{{--                  </li>--}}
-{{--              </ul>--}}
-{{--          </li>--}}
+         <li class="nav-item has-treeview">
+             <a href="#" class="nav-link">
+                 <i class="nav-icon fas fa-copy"></i>
+                 <p>
+                     Màu
+                     <i class="fas fa-angle-left right"></i>
+                     <span class="badge badge-info right">2</span>
+                 </p>
+             </a>
+             <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                     <a href="{{ route('color.index') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Danh Sách</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ route('color.create') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Thêm Màu</p>
+                     </a>
+                 </li>
+             </ul>
+         </li>
 
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
@@ -290,7 +290,7 @@
                       </a>
                   </li>
               </ul>
-          </li>
+          </li> --}}
 
 {{--          <li class="nav-item">--}}
 {{--              <a href="{{ route('configProduct.index') }}" class="nav-link">--}}
