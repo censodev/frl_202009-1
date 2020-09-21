@@ -17,7 +17,9 @@ class ProductItem extends Model
         'updated_by',
         'created_at',
         'updated_at',
-        'status'
+        'status',
+        'color',
+        'color_image',
     ];
 
     public function Product() {

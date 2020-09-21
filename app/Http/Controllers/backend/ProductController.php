@@ -124,7 +124,9 @@ class ProductController extends Controller
         $related_gallery = !empty( $request->related_gallery ) ? Genratejsonarray( $request->related_gallery ) : '';
 
         $data_product = [
-            'material'          => $request->material,
+            // 'material'          => $request->material,
+            'color'             => $request->color,
+            'color_image'       => $request->color_image,
             'price_buy'         => $request->price_buy,
             'price_promotion'   => $request->price_promotion,
         ];
@@ -174,7 +176,9 @@ class ProductController extends Controller
             foreach($data_product['price_buy'] as $key => $price_buy){
                 $data_item = [
                     'product_id'        => $id_product,
-                    'material'          => (int) $data_product['material'][$key],
+                    // 'material'          => (int) $data_product['material'][$key],
+                    'color'             => $data_product['color'][$key],
+                    'color_image'       => $data_product['color_image'][$key],
                     'price_buy'         => $price_buy,
                     'price_promotion'   => $data_product['price_promotion'][$key],
                     'created_by'        => $user_id,
@@ -325,7 +329,9 @@ class ProductController extends Controller
 
             $data_product = [
                 'item_id'           => $request->item_id,
-                'material'          => $request->material,
+                // 'material'          => $request->material,
+                'color'             => $request->color,
+                'color_image'       => $request->color_image,
                 'price_buy'         => $request->price_buy,
                 'price_promotion'   => $request->price_promotion,
             ];
@@ -394,7 +400,9 @@ class ProductController extends Controller
 
                     $data_item = [
                         'product_id'        => $product->id,
-                        'material'          => (int) $data_product['material'][$key],
+                        // 'material'          => (int) $data_product['material'][$key],
+                        'color'             => $data_product['color'][$key],
+                        'color_image'       => $data_product['color_image'][$key],
                         'price_buy'         => $data_product['price_buy'][$key],
                         'price_promotion'   => $data_product['price_promotion'][$key],
                         'created_by'        =>  $user_id,

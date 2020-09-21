@@ -412,7 +412,7 @@ use App\Models\backend\ProductItem; ?>
                                     @foreach ($images as $key => $item)
                                         <div class="" style="{{ $key != 0 ? 'display:none' : '' }}">
                                             <a data-fancybox="images" href="{{ $item }}">
-                                                <img width="528" height="684"
+                                                <img id="product-img-{{ $key }}" width="528" height="684"
                                                     src="{{ $item }}" class="wp-post-image" alt="{{ $alt_image[$key] }}" title="{{ $title_image[$key] }}" />
                                             </a>
                                         </div>
@@ -433,18 +433,18 @@ use App\Models\backend\ProductItem; ?>
                                 <p class="price">
                                     @if ($item_frist->price_buy != $item_frist->price_promotion)
                                         <del>
-                                            <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-amount amount base-price">
                                                 {{ number_format($item_frist->price_buy, 0, '.', '.') }} đ
                                             </span>
                                         </del>
                                         <ins>
-                                            <span class="woocommerce-Price-amount amount" style="color: #df2121">
+                                            <span class="woocommerce-Price-amount amount sale-price" style="color: #df2121">
                                                 {{ number_format($item_frist->price_promotion, 0, '.', '.') }} đ
                                             </span>
                                         </ins>
                                     @else
                                         <ins>
-                                            <span class="woocommerce-Price-amount amount" style="color: #df2121">
+                                            <span class="woocommerce-Price-amount amount base-price" style="color: #df2121">
                                                 {{ number_format($product_item->price_buy, 0, '.', '.') }} đ
                                             </span>
                                         </ins>
@@ -469,6 +469,24 @@ use App\Models\backend\ProductItem; ?>
                                             <a href="#" rel="tag">{{ $product_detail->code }}</a>
                                         </span>
                                     @endif
+                                </div>
+
+                                <div class="product_meta">
+                                    <span class="posted_in">Màu sắc:
+                                        @foreach ($list_product as $key => $item)
+                                            @if ($item->color)
+                                                @php
+                                                    $color = $data['colors'][$item->color]->value;
+                                                @endphp
+                                                <button class="switch-color" 
+                                                    data-src="{{ $item->color_image }}" 
+                                                    data-base-price="{{ number_format($item->price_buy, 0, '.', '.') }} đ"
+                                                    data-sale-price="{{ number_format($item->price_promotion, 0, '.', '.') }} đ"
+                                                    data-id="{{ $item->id }}"
+                                                    style="width:1rem;height:1rem;border:none;padding:0!important;border-radius:50%;background: {{ $color }}"></button>
+                                            @endif
+                                        @endforeach
+                                    </span>
                                 </div>
 
 
@@ -644,4 +662,23 @@ use App\Models\backend\ProductItem; ?>
                 @include('frontend.includes.comment')
             </div>
         </div>
+
+        <script>
+            document.querySelectorAll('.switch-color').forEach(i => {
+                i.addEventListener('click', e => {
+                    let src = e.target.dataset.src
+                    let basePrice = e.target.dataset.basePrice
+                    let salePrice = e.target.dataset.salePrice
+                    let id = e.target.dataset.id
+                    console.log(src)
+                    console.log(basePrice)
+                    console.log(salePrice)
+                    document.querySelector('#product-img-0').src = src
+                    document.querySelector('#product-img-0').parentElement.href = src
+                    document.querySelector('.base-price').innerHTML = basePrice
+                    document.querySelector('.sale-price').innerHTML = salePrice
+                    document.querySelector('.cart-plus-minus-box').dataset.id = id
+                })
+            })
+        </script>
     @endsection

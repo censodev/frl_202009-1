@@ -293,7 +293,8 @@ class ShoppingController extends Controller
                     $id => [
                         "id" => $id,
                         "code" => $main_product->code,
-                        "material" => !empty($materials[$product->material]) ? $materials[$product->material] : '',
+                        "color" => $list_color->firstWhere('id', $product->color)['name'],
+                        // "material" => !empty($materials[$product->material]) ? $materials[$product->material] : '',
                         "name" => $main_product->title,
                         "alias" => url( $main_product->alias ),
                         "quantity" => $quantity,
@@ -321,7 +322,8 @@ class ShoppingController extends Controller
                     $cart[$id] = [
                         "id" => $id,
                         "code" => $main_product->code,
-                        "material" => !empty($materials[$product->material]) ? $materials[$product->material] : '',
+                        "color" => $list_color->firstWhere('id', $product->color)['name'],
+                        // "material" => !empty($materials[$product->material]) ? $materials[$product->material] : '',
                         "name" => $main_product->title,
                         "alias" => url($main_product->alias),
                         "quantity" => $quantity,

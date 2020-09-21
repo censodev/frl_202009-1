@@ -76,7 +76,7 @@
                                                     <th>Ảnh</th>
                                                     <th>Tên Sản Phẩm</th>
                                                     <th>Mã Sản Phẩm</th>
-                                                    {{-- <th>Vật Liệu</th> --}}
+                                                    <th>Màu Sắc</th>
                                                     <th>Giá</th>
                                                     <th>Số Lượng</th>
                                                     <th>Thành Tiền</th>
@@ -98,7 +98,7 @@
                                                         </td>
                                                         <td class="product-name"><a href="">{{ $item['name'] }}</a></td>
                                                         <td>{{ $item['code'] }}</td>
-                                                        {{-- <td>{{ $item['material'] }}</td> --}}
+                                                        <td>{{ $item['color'] }}</td>
                                                         <td class="product-price-cart"><span class="amount">{{ number_format($item['price'], 0, ".", ".") }} đ</span></td>
                                                         <td class="product-quantity">
                                                             <div class="pro-dec-cart">

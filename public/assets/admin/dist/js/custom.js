@@ -46,12 +46,19 @@ $(document).ready(function() {
 
     /* Clone Product */
     $('.btn-clone-product').on('click', function() {
-        var html = $(".area-clone-product-cli").html();
-        $(".increment-product").append(html);
+		var count = $(this).data('count')
+		var html = $(".area-clone-product-cli").html();
+		html = html.replace(/-color-number/g, '-color-' + count);
+		$(".increment-product").append(html);
+		$('.btn-clone-product').data('count', ++count)
 
         $('.btn-remove-product').on('click', function() {
             $(this).parents(".clone-product-cli").remove();
-        });
+		});
+		
+		$('[class*="lfm-mul"]').each(function() {
+	        $(this).filemanager('file');
+	    });
     });
 
 

@@ -565,6 +565,12 @@ var Discount = {
 
         });
 
+        $("body").on("click", '.block-endow-list .remove-item__action', function (e) {
+            var itemID = $(this).attr('itemID');
+            self.removeEndow(itemID);
+
+        });
+
         $("body").on("click", '.addappliesto.gallery', function (e) {
             var listValue = '';
             var itemID = 0;

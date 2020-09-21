@@ -227,7 +227,7 @@ class ProductController extends Controller
             $materials = [];
             if(!empty($list_color) && count($list_color) >0){
                 foreach ($list_color as $key => $item){
-                    $colors[$item->id] = $item->name;
+                    $colors[$item->id] = $item;
                 }
             }
             if(!empty($list_material) && count($list_material) >0){
