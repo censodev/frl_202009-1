@@ -69,14 +69,14 @@ class DashboardController extends Controller
                     ->get();
             }
 
-            // $relatedPartnerIds = $data['related_partners'] = [];
-            // if(isset($data['home_default']->related_partner) && !empty($data['home_default']->related_partner)) {
+            $relatedPartnerIds = $data['related_partners'] = [];
+            if(isset($data['home_default']->related_partner) && !empty($data['home_default']->related_partner)) {
 
-            //     $relatedPartnerIds          = json_decode($data['home_default']->related_partner,true);
-            //     $data['related_partners']   = Partner::whereIn('id', $relatedPartnerIds)
-            //         ->where('status',1)
-			// 		->get();
-            // }
+                $relatedPartnerIds          = json_decode($data['home_default']->related_partner,true);
+                $data['related_partners']   = Partner::whereIn('id', $relatedPartnerIds)
+                    ->where('status',1)
+					->get();
+            }
 
             $relatedHotIds = $data['related_hots'] = [];
             if(isset($data['home_default']->related_hot) && !empty($data['home_default']->related_hot)) {

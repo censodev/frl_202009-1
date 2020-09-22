@@ -367,7 +367,7 @@ use App\Models\backend\Url;
 
     function render_products_list($products_list)
     {
-        return view('frontend.includes.products-list', ['list_product' => $products_list]);
+        return view('frontend.includes.products-list', ['list_product' => $products_list])->render();
     }
 
     function render_posts_list($posts_list)
@@ -580,6 +580,6 @@ use App\Models\backend\Url;
 
     function render_sections_landing($sections)
     {
-        return view('frontend.pages.landingpage.section', compact('sections'));
+        return view('frontend.pages.landingpage.section', compact('sections'))->render();
     }
 ?>

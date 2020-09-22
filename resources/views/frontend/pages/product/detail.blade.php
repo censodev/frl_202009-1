@@ -260,7 +260,8 @@ use App\Models\backend\ProductItem; ?>
 
 
 
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.14/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.14/dist/css/splide.min.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -409,15 +410,27 @@ use App\Models\backend\ProductItem; ?>
                             <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
                                 data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
                                 <figure class="">
-                                    @foreach ($images as $key => $item)
-                                        <div class="" style="{{ $key != 0 ? 'display:none' : '' }}">
-                                            <a data-fancybox="images" href="{{ $item }}">
-                                                <img id="product-img-{{ $key }}" width="528" height="684"
-                                                    src="{{ $item }}" class="wp-post-image" alt="{{ $alt_image[$key] }}" title="{{ $title_image[$key] }}" />
-                                            </a>
-                                        </div>
-                                    @endforeach
+                                    <div>
+                                        <a data-fancybox="images" href="{{ $images[0] }}">
+                                            <img id="product-img-0" width="528" height="684"
+                                                src="{{ $images[0] }}" class="wp-post-image" alt="{{ $alt_image[0] }}" title="{{ $title_image[0] }}" />
+                                        </a>
+                                    </div>
                                 </figure>
+                                <div class="splide">
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            @foreach ($images as $key => $item)
+                                                <li class="splide__slide">
+                                                    <a data-fancybox="images" href="{{ $item }}">
+                                                        <img id="product-img-{{ $key }}" width="528" height="684"
+                                                            src="{{ $item }}" class="wp-post-image" alt="{{ $alt_image[$key] }}" title="{{ $title_image[$key] }}" />
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         
 
@@ -680,5 +693,14 @@ use App\Models\backend\ProductItem; ?>
                     document.querySelector('.cart-plus-minus-box').dataset.id = id
                 })
             })
+
+            
+
+
+            new Splide( '.splide', {
+                type   : 'loop',
+                perPage: 3,
+                perMove: 1,
+            } ).mount();
         </script>
     @endsection

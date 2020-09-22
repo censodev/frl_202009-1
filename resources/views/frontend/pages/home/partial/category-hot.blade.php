@@ -72,8 +72,9 @@
                                                     </a>
                                                 </div>
                                                 <div class="cat_description">
-                                                    <a class="cat_name" href="{{ $hot->link }}"
+                                                    <a class="cat_name" style="text-align:center" href="{{ $hot->link }}"
                                                         title="{{ $hot->link_title }}">{{ $hot->name }}</a>
+                                                    <div style="text-align:center">{!! substr($hot->alt_image ?? '',0,160) !!}</div>
                                                 </div>
                                             </div>
                                         @endforeach

@@ -84,7 +84,7 @@ class AppServiceProvider extends ServiceProvider
             // ])->get();
             // create_array_category_menu($category_products);
 
-            $category_products = $cats->where('parent_id', '<>', -1)->where('type', 5)->sortBy('ordering');
+            $category_products = $cats->where('parent_id', 32)->where('type', 5)->sortBy('ordering');
             $logo = ConfigLogo::where("status",1)->get();
             $logo->top = $logo->where("type",1)->first();
 

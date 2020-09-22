@@ -35,7 +35,7 @@
         @php
 
             $related_sliders              = $data['related_sliders'];
-            // $related_partners              = $data['related_partners'];
+            $related_partners              = $data['related_partners'];
             $related_hots              = $data['related_hots'];
             // $related_hot2s              = $data['related_hot2s'];
             $related_posts              = $data['related_posts'];
@@ -102,7 +102,7 @@
           {{-- @include('backend.inc-dashboard.certify') --}}
           {{-- @include('backend.inc-dashboard.tv') --}}
           {{-- @include('backend.inc-dashboard.newspaper') --}}
-          {{-- @include('backend.inc-dashboard.partner') --}}
+          @include('backend.inc-dashboard.partner')
 
           <div class="row">
             <div class="col-12">

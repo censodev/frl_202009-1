@@ -5,22 +5,22 @@
         $title_images       = json_decode( $product->title_image );
         $alt_images         = json_decode( $product->alt_image );
     @endphp
-    <li class="{{ $k % 5 == 0 ? 'first' : '' }} product type-product status-publish has-post-thumbnail product_cat-awabox-fullerm product_cat-coffee-board product_cat-excelscoffee product_cat-machines product_cat-milk-items product_cat-oxfull-mitron product_cat-varieties instock featured shipping-taxable purchasable product-type-simple">
+    <li style="display:inline-block" class="{{ $k % 5 == 0 ? 'first' : '' }} product type-product status-publish has-post-thumbnail product_cat-awabox-fullerm product_cat-coffee-board product_cat-excelscoffee product_cat-machines product_cat-milk-items product_cat-oxfull-mitron product_cat-varieties instock featured shipping-taxable purchasable product-type-simple">
         <div class="container-inner">
             <div class="product-block-inner">
                 <div class="image-block">
                     <a href="{{ url($product->alias) }}">
                         <img width="194" height="251"
-                            src="{{ $images[0] }}"
+                            src="{{ $images[0] ?? '' }}"
                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                            alt="{{ $alt_images[0] }}" 
-                            title="{{ $title_images[0] }}"
+                            alt="{{ $alt_images[0] ?? '' }}" 
+                            title="{{ $title_images[0] ?? '' }}"
                             sizes="(max-width: 194px) 100vw, 194px" />
                         <img width="194" height="251"
-                            src="{{ $images[1] }}"
+                            src="{{ $images[1] ?? '' }}"
                             class="secondary-image attachment-shop-catalog"
-                            alt="{{ $alt_images[1] }}" 
-                            title="{{ $title_images[1] }}"
+                            alt="{{ $alt_images[1] ?? '' }}" 
+                            title="{{ $title_images[1] ?? '' }}"
                             sizes="(max-width: 194px) 100vw, 194px" />
                         @php
                             $percent = 100 - round($product_item->price_promotion / $product_item->price_buy * 100);

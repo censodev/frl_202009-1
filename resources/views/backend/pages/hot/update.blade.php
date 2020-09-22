@@ -91,7 +91,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="alt_image">Mô Tả Hình Ảnh</label>
-                      <input type="text" id="alt_image" name="alt_image" placeholder="Nhập mô tả hình ảnh" class="form-control" value="{{ $hot->alt_image ?? old('alt_image') }}" required oninvalid="this.setCustomValidity('Vui lòng nhập mô tả hình ảnh.')" oninput="setCustomValidity('')">
+                      <input type="text" id="alt_image" name="alt_image" placeholder="Nhập mô tả hình ảnh" class="form-control" value="{{ $hot->alt_image ?? old('alt_image') }}" >
                     </div>
                   </div>
                 </div>

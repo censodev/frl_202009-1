@@ -27,7 +27,7 @@ class StoreHotRequest extends FormRequest
             'name'         =>  'required|min:2',
             'images'       =>  'required',
             'title_image'  =>  'required',
-            'alt_image'    =>  'required'
+            // 'alt_image'    =>  'required'
         ];
     }
 
@@ -43,7 +43,7 @@ class StoreHotRequest extends FormRequest
             'name'         =>  __('Tên đối tác'),
             'images'       =>  __('Logo đối tác'),
             'title_image'  =>  __('Tiêu đề hình ảnh'),
-            'alt_image'    =>  __('Mô tả hình ảnh')
+            // 'alt_image'    =>  __('Mô tả hình ảnh')
         ];
     }
 }

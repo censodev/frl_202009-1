@@ -68,7 +68,7 @@
                     <div class="entry-content-other">
                         <div class="entry-summary">
                             <div class="excerpt" style="color: #808080">
-                                {!! $item->sapo !!}
+                                {!! str_limit(strip_tags($item->sapo),200,'...') !!}
                             </div>
                         </div>
                     </div>

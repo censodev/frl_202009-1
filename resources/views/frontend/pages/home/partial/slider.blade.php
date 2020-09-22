@@ -308,7 +308,7 @@
                                                         jsFileLocation: "//wordpress.templatemela.com/woo/WCM02/WCM020036/wp-content/plugins/revslider/public/assets/js/",
                                                         visibilityLevels: "1240,1024,768,480",
                                                         gridwidth: "900,900,767,480",
-                                                        gridheight: "531,531,460,460",
+                                                        gridheight: "393,393,460,460",
                                                         minHeight: "",
                                                         spinner: "spinner3",
                                                         editorheight: "531,531,460,460",

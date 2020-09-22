@@ -98,6 +98,8 @@
                                         @include('frontend.pages.home.partial.product-hot')
                                         <!-- End danh mục nổi bật Section -->
 
+                                        @include('frontend.pages.home.partial.banner')
+
                                         <!-- danh mục nổi bật Section -->
                                         @include('frontend.pages.home.partial.product-sale')
                                         <!-- End danh mục nổi bật Section -->
