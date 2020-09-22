@@ -408,7 +408,7 @@ use App\Models\backend\ProductItem; ?>
                                 </ol>
                             </div> --}}
                             <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
-                                data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
+                                data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;margin-bottom:1rem">
                                 <figure class="">
                                     <div>
                                         <a data-fancybox="images" href="{{ $images[0] }}">
