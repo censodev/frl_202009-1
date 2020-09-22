@@ -20,6 +20,17 @@ asset('assets/client/dist/img/banner/banner-default.jpg');
 $list_product = $data['list_product'];
 $view_product = $data['viewed_product'];
 $materials = $data['materials'];
+
+// slider
+$relatedSliderIds = $related_sliders = [];
+$home_default = \App\Models\backend\HomepageManager::getHomeDefault();
+if(isset($home_default->related_slider) && !empty($home_default->related_slider)) {
+
+    $relatedSliderIds = json_decode($home_default->related_slider, true);
+    $related_sliders = \App\Models\backend\Slider::whereIn('id', $relatedSliderIds)
+        ->where('status', 1)
+        ->get();
+}
 ?>
 
 @section($data->content)
@@ -95,6 +106,8 @@ $materials = $data['materials'];
 
     </div> --}}
     <style>
+        .page-title { display: none !important; }
+        #productCategories { display: block; }
         .ereaders-shop-filter {
         text-align: center
         }
@@ -242,15 +255,17 @@ $materials = $data['materials'];
             height: 25px
         }
     </style>
+    
+    @include('frontend.pages.home.partial.slider')
     <div class="main-content-inner ">
         <div id="main-content" class="main-content  left-sidebar">
             <div class="content-area">
                 <div id="primary" class="content-area">
                     <main id="content" class="site-main">
-                        <nav class="woocommerce-breadcrumb">
+                        {{-- <nav class="woocommerce-breadcrumb">
                             <span><a href="{{ url('/') }}">Trang chủ</a></span> /
                             <span>{{ $data['title'] }}</span>
-                        </nav>
+                        </nav> --}}
                         <div class="woocommerce-notices-wrapper"></div>
                         {{-- <p class="woocommerce-result-count">
                             Showing all 4 results</p> --}}

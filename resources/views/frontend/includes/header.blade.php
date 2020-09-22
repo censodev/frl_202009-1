@@ -154,7 +154,7 @@ $session_agency = session('data_agency');
                     <div class="category-box">
                         <div class="home-category widget_product_categories">
                             <h3 class="widget-title">All Categories</h3>
-                            <ul class="product-categories" style="overflow-y:auto;max-height:415px">
+                            <ul id="productCategories" class="product-categories" style="overflow-y:auto;max-height:415px">
                                 @foreach ($category_products as $category)
                                     <li class="cat-item cat-item-103 cat-parent"><a
                                         href="{{ asset(change_cat_url_by_article_url($category)) }}">{{ $category->title }}</a>

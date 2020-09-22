@@ -35,6 +35,18 @@ use App\Models\backend\ProductItem; ?>
     $alt_image = json_decode( $product_detail->alt_image );
 
     $footer_contact_info = !empty( $footers->footer_contact_info ) ? json_decode( $footers->footer_contact_info ) : [];
+    
+    // slider
+    $relatedSliderIds = $related_sliders = [];
+    $home_default = \App\Models\backend\HomepageManager::getHomeDefault();
+    if(isset($home_default->related_slider) && !empty($home_default->related_slider)) {
+
+        $relatedSliderIds = json_decode($home_default->related_slider, true);
+        $related_sliders = \App\Models\backend\Slider::whereIn('id', $relatedSliderIds)
+            ->where('status', 1)
+            ->get();
+    }
+    
     @endphp
 
     {{-- @include('frontend.includes.breadcrumb-detail')
@@ -267,18 +279,20 @@ use App\Models\backend\ProductItem; ?>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
     <style>
-        .page-title .entry-title-main { display: none !important; }
+        .page-title { display: none !important; }
+        #productCategories { display: block; }
     </style>
 
-    <div class="main-content-inner left-sidebar">
+    @include('frontend.pages.home.partial.slider')
+    <div class="main-content-inner left-sidebar" style="margin-top:1rem">
         <div class="main-content">
             <div class="main-content-inner-full single-product-full">
                 <div id="primary" class="content-area">
                     <main id="content" class="site-main">
-                        <nav class="woocommerce-breadcrumb">
+                        {{-- <nav class="woocommerce-breadcrumb">
                             <span><a href="{{ url('/') }}">Trang chủ</a></span> /
                             <span><a href="{{ url( $data['category']->alias ) }}">{{ $data['category']->title }}</a></span> /
-                            <span>{{ $data['title'] }}</span></nav>
+                            <span>{{ $data['title'] }}</span></nav> --}}
                         <div class="woocommerce-notices-wrapper"></div>
                         <div id="product-1364"
                             class="has-post-thumbnail product type-product post-1364 status-publish first instock product_cat-awabox-fullerm product_cat-coffee-board product_cat-excelscoffee product_cat-machines product_cat-milk-items product_cat-oxfull-mitron product_cat-varieties featured shipping-taxable purchasable product-type-simple">

@@ -82,8 +82,14 @@
 
         @if($type == 'slider')
             @php
-                $listItems              = Slider::whereIn('id', $Ids)->where('status',1)->get();
+                $related_sliders              = Slider::whereIn('id', $Ids)->where('status',1)->get();
             @endphp
+            @include('frontend.pages.home.partial.slider')
+            <script>
+                const dom = document.querySelector('.rev-slider')
+                dom.classList.remove('vc_col-sm-9')
+                dom.classList.add('vc_col-sm-12')
+            </script>
         @endif
 
         @if($type == 'newspaper')
@@ -202,15 +208,16 @@
                                                 </h1>
                                             </div>
                                             <div class="woo_categories_slider woocat product-category grid">
-                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                <div id="category_grid" class="category-grid grid cols-3">
                                                     @foreach ($listItems as $item)
                                                         <div style="display:inline-block" class="cat-outer-block">
                                                             <div class="cat-img-block">
-                                                                {!! $item->icon !!}
+                                                                <style>.icon-endow i { color:#86c54c;font-size: 3rem }</style>
+                                                                <span class="icon-endow">{!! $item->icon !!}</span>
                                                             </div>
                                                             <div class="cat_description">
                                                                 <a class="cat_name" style="text-align:center" href="#">{{ $item->name }}</a>
-                                                                <div style="text-align:center">{!! substr($item->description,0,160) !!}</div>
+                                                                <div style="text-align:center">{!! $item->description !!}</div>
                                                             </div>
                                                         </div>
                                                     @endforeach
