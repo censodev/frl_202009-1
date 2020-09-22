@@ -358,11 +358,11 @@
                                                 <div id="category_grid" class="category-grid grid cols-2">
                                                     @foreach ($listItems as $item)
                                                         @if ($item->position == 0)
-                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;padding-right: 1rem;box-sizing: border-box;">
+                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;padding-right: 1rem;box-sizing: border-box;vertical-align: text-top">
                                                                 {!! $item->content !!}
                                                             </div>
                                                         @endif    
-                                                        <div style="display: inline-block;width: 49%;padding-right: 1rem;padding-left: 1rem;box-sizing: border-box;">
+                                                        <div style="display: inline-block;width: 49%;padding-right: 1rem;padding-left: 1rem;box-sizing: border-box;vertical-align: text-top">
                                                             @if ($item->image)
                                                                 <img src="{{ $item->image }}" alt="{{ $item->alt_image }}">
                                                             @else
@@ -370,7 +370,7 @@
                                                             @endif
                                                         </div>
                                                         @if ($item->position == 1)
-                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;box-sizing: border-box;">
+                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;box-sizing: border-box;vertical-align: text-top">
                                                                 {!! $item->content !!}
                                                             </div>
                                                         @endif
@@ -386,6 +386,57 @@
                 </div>
             </div>
         @endif
-
+        
+        @if($type == 'hot')
+            @php
+                $related_hots = \App\Models\backend\Hot::whereIn('id', $Ids)->where('status',1)->get();
+            @endphp
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="shortcode-title left">
+                                                <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                    {{ $section->name }}
+                                                </h1>
+                                            </div>
+                                            <div class="woo_categories_slider woocat product-category grid">
+                                                <div id="category_grid" class="category-grid grid cols-4">
+                                                    @foreach ($related_hots as $hot)
+                                                        @php
+                                                            $images = !empty( $hot->images ) ? $hot->images :
+                                                            asset('assets/admin/dist/img/avatar5.png');
+                                                        @endphp
+                                                        <div class="cat-outer-block">
+                                                            <div class="cat-img-block">
+                                                                <a class="cat-img" href="{{ $hot->link }}">
+                                                                    <img src="{{ $images }}"
+                                                                        title="{{ $hot->title_image }}" 
+                                                                        alt="{{ $hot->alt_image }}" height="206"
+                                                                        width="255" />
+                                                                </a>
+                                                            </div>
+                                                            <div class="cat_description">
+                                                                <a class="cat_name" style="text-align:center" href="{{ $hot->link }}"
+                                                                    title="{{ $hot->link_title }}">{{ $hot->name }}</a>
+                                                                <div style="text-align:center">{!! substr($hot->alt_image ?? '',0,160) !!}</div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
     @endif
 @endforeach

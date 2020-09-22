@@ -36,6 +36,7 @@ class LandingPageController extends Controller
         'about'     => 'Giới Thiệu',
         'album'     => 'Album',
         'video'     => 'Video',
+        'hot'       => 'Danh Mục Nổi Bật',
     ];
     private $keyword = '';
     private $layout  = 'backend.layouts.';
@@ -124,6 +125,9 @@ class LandingPageController extends Controller
         }
         if($type === 'video'){
             $items = !empty( $request->related_video ) ? Genratejsonarray( $request->related_video ) : '';
+        }
+        if($type === 'hot'){
+            $items = !empty( $request->related_hot ) ? Genratejsonarray( $request->related_hot ) : '';
         }
 
         return $items;
