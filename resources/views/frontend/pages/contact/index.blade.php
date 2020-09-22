@@ -299,10 +299,20 @@ $footer_contact_info = !empty( $footers->footer_contact_info ) ? json_decode( $f
                                                         <div class="icon">
                                                             <i class="fa fa-envelope"></i>
                                                         </div>
-                                                        <div class="content">
+                                                        <div class="content" style="padding-top: 12px">
                                                             <div class="address-label"></div>
                                                             <a href="mailto:{{ $contact_info[1] }}"
                                                                 title="{{ $contact_info[1] }}">{{ $contact_info[1] }}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="address-text third">
+                                                    <div class="address-text-inner">
+                                                        <div class="icon">
+                                                            <i class="fa fa-clock-o"></i>
+                                                        </div>
+                                                        <div class="content" style="padding-top: 12px">
+                                                            <div class="address-label"></div>
                                                             <p>{{ $footer_contact_info[2] }}</p>
                                                         </div>
                                                     </div>
