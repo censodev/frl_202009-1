@@ -50,8 +50,8 @@
                             <a class="fb-title" href="#">{{ $cmt->name }}</a>
                             <div style="font-size:15px">{{ $cmt->content }}</div>
                             <div style="font-size:12px">
-                                <a style="color:#4267b2" href="#">Thích</a> ·
-                                <a style="color:#4267b2" href="#">Phản hồi</a> ·
+                                <a style="color:#4267b2">Thích</a> ·
+                                <a style="color:#4267b2">Phản hồi</a> ·
                                 <a style="color:#90949c">{{ $cmt->time }}</a>
                             </div>
                         </div>
