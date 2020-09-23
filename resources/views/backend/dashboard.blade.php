@@ -45,6 +45,7 @@
             // $related_certifies              = $data['related_certifies'];
             // $related_tvs                    = $data['related_tvs'];
             // $related_newspapers                    = $data['related_newspapers'];
+            $related_banners                    = $data['related_banners'];
 
             $funfact_number         = json_decode( $home_default->funfact_number );
             $funfact_icon         = json_decode( $home_default->funfact_icon );
@@ -86,6 +87,7 @@
           </div>
 
           @include('backend.inc-dashboard.slider')
+          @include('backend.inc-dashboard.banner')
           @include('backend.inc-dashboard.counter')
           {{-- @include('backend.inc-dashboard.about') --}}
           {{-- @include('backend.inc-dashboard.why') --}}

@@ -272,6 +272,7 @@ class HomepageManagerController extends Controller
             $related_newspaper  = !empty( $request->related_newspaper ) ? Genratejsonarray( $request->related_newspaper ) : '';
             $related_feedback  = !empty( $request->related_feedback ) ? Genratejsonarray( $request->related_feedback ) : '';
             $related_partner  = !empty( $request->related_partner ) ? Genratejsonarray( $request->related_partner ) : '';
+            $related_banner  = !empty( $request->related_banner ) ? Genratejsonarray( $request->related_banner ) : '';
 
             $funfact_number = !empty($request->funfact_number) ? Genratejsonarray($request->funfact_number): "";
             $funfact_icon = !empty($request->funfact_icon) ? Genratejsonarray($request->funfact_icon): "";
@@ -371,6 +372,8 @@ class HomepageManagerController extends Controller
                 'album_hot_title'               => $album_hot_title,
                 'album_hot_images'              => $album_hot_images,
                 'album_hot_alt_images'          => $album_hot_alt_images,
+
+                'related_banner'                => $related_banner,
 
                 'updated_by'                    => $user_id,
             ];

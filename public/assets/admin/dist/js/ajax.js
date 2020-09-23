@@ -1177,7 +1177,7 @@ var Discount = {
                 var itemID = this.value;
                 var is = isInArray(itemID, self.listNewspaperSelected);
                 if(!is){
-                    self.listTvSelected.push(itemID)
+                    self.listNewspaperSelected.push(itemID)
                     var block  = $('#modal-lg-newspaper .ul-item.'+itemID);
                     var image  = $('#modal-lg-newspaper .ul-item.'+itemID + ' img').attr('src');
                     var title  = $('#modal-lg-newspaper .ul-item.'+itemID + ' span.text').text();
@@ -1424,6 +1424,10 @@ var Discount = {
         this.listBannerSelected    = listBannerSelected;
         this.listHotSelected    = listHotSelected;
         this.listHotSelected2    = listHotSelected2;
+        this.listAlbumSelected = listAlbumSelected;
+        this.listAboutSelected = listAboutSelected;
+        this.listVideoSelected = listVideoSelected;
+        this.listNewspaperSelected = listNewspaperSelected;
     },
 
     searchGallery : function(block,isAppendModal){
@@ -1982,6 +1986,34 @@ var Discount = {
                         $("#modal-lg-newspaper").modal()
                     }else{
                         $("#modal-lg-newspaper .block-newspaper-list").html(response.message)
+                    }
+                }
+            },
+            error: function (error) {
+                alert('Không thể tải lên dữ liệu. Vui lòng thử lại.')
+            }
+        });
+    },
+
+    searchBanner : function(block,isAppendModal){
+        var sendData = {};
+        sendData.q = $('.block-search-appliesto.'+block + ' input').val();
+        sendData.isAppendModal = isAppendModal;
+        sendData.notFindID = this.listBannerSelected;
+        $.ajax({
+            type: "GET",
+            url: '/admin/Banner/searchRelative',
+            data: sendData,
+            dataType: 'JSON',
+            success: function (response) {
+                html = '';
+                var msg = response.message;
+                if(response.status){
+                    if(!isAppendModal){
+                        $('body').append(response.message);
+                        $("#modal-lg-banner").modal()
+                    }else{
+                        $("#modal-lg-banner .block-banner-list").html(response.message)
                     }
                 }
             },

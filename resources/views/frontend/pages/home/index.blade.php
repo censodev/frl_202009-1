@@ -72,6 +72,7 @@
                                         @include('frontend.pages.home.partial.counter')
                                         <!-- End counter Section -->
 
+                                        @php $index_banner_start = 0; @endphp
                                         @include('frontend.pages.home.partial.banner')
 
                                         {{-- Introduce --}}
@@ -98,6 +99,7 @@
                                         @include('frontend.pages.home.partial.product-hot')
                                         <!-- End danh mục nổi bật Section -->
 
+                                        @php $index_banner_start = 2; @endphp
                                         @include('frontend.pages.home.partial.banner')
 
                                         <!-- danh mục nổi bật Section -->

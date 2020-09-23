@@ -163,6 +163,15 @@ class DashboardController extends Controller
             //         ->get();
             // }
 
+            $relatedBannerIds = $data['related_banners'] = [];
+            if(isset($data['home_default']->related_banner) && !empty($data['home_default']->related_banner)) {
+
+                $relatedBannerIds              = json_decode($data['home_default']->related_banner,true);
+                $data['related_banners']       = Banner::whereIn('id', $relatedBannerIds)
+                    ->where('status',1)
+                    ->get();
+            }
+
         }
 
         return View($data->view,compact('data'));

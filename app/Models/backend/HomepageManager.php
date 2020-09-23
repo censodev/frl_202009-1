@@ -89,6 +89,8 @@ class HomepageManager extends Model
         'album_hot_images',
         'album_hot_alt_images',
 
+        'related_banner',
+
         'created_by',
         'updated_by'
     ];
