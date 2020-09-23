@@ -251,27 +251,76 @@ $class_col_hide = 'hide';
 @endif
 
 @if (!empty($seeding) && count($seeding) > 0)
-
+    <style>
+        /*notineva*/
+        #notineva .notifi {
+            line-height: 1.2rem;
+            border-radius: 40px;
+            padding: 0 20px 0px 10px;
+            box-shadow: 0 0 1px rgba(64, 64, 64, .3), 0 8px 50px rgba(64, 64, 64, .05);
+            background: rgba(250, 250, 250, .9);
+            font-size: 13px;
+        }
+        #notineva .display {
+            display: block;
+            transition: display 2s;
+            -webkit-transition: display 2s;
+        }
+        #notineva .item .img-noti img{
+            border-radius: 50%;
+        }
+        #notineva .notifi {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            z-index: 999999999999999;
+            border-radius: 35px;
+            box-shadow: 0px 0px 20px #333;
+        }
+        #notineva .notifi .item {
+            padding: 1px 0;
+            height: 62px;
+            display: flex;
+        }
+        #notineva .img-noti {
+            display: flex;
+            margin: auto;
+            float: left;
+            padding-right: 10px;
+        }
+        #notineva .content {
+            float: right;
+            font-size: 0.8rem;
+            padding-top: 3px;
+        }
+        #notineva .content p{
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+        #notineva .notifi span, #notineva .notifi .time , #notineva .notifi .name{
+            font-size: 12px;
+        }
+    </style>
     <div class="notneva" id="notineva">
         {{--        <div class="notifi display" id="noti"> <div class="item"> <div class="img-noti"><img src="http://ereader.test/storage/files/1/Seeding/khach-hang-1.jpg" alt="" width="50px"></div> <div class="content"> <p class="name">Phạm Hồng Anh</p><span style="font-style: italic;">Đã đặt lịch tư vấn</span> <p class="time">8 phút trước</p> </div> </div>--}}
     </div>
 
     <script>
-        // var noti = document.getElementById('notineva');
-        // var test = document.getElementById('noti');
-        // var arr = @json($array_seeding);
-        // function random(array) {
-        //     return array[Math.floor(Math.random() * array.length)]
-        // }
-        // setInterval(function(){
-        //     noti.innerHTML = random(arr);
-        //     setTimeout(function(){
-        //         noti.classList.add('hidden');
-        //     },10000);
-        //     setTimeout(function(){
-        //         noti.classList.remove('hidden');
-        //     },5000);
-        // },10000);
+        var noti = document.getElementById('notineva');
+        var test = document.getElementById('noti');
+        var arr = @json($array_seeding);
+        function random(array) {
+            return array[Math.floor(Math.random() * array.length)]
+        }
+        setInterval(function(){
+            noti.innerHTML = random(arr);
+            setTimeout(function(){
+                noti.classList.add('hidden');
+            },10000);
+            setTimeout(function(){
+                noti.classList.remove('hidden');
+            },5000);
+        },10000);
     </script>
 
 @endif
