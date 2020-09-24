@@ -542,110 +542,26 @@ use App\Models\backend\ProductItem; ?>
                                 
                             </div>
 
+                            @if ($product_detail->description)
+                                <div class="woocommerce-tabs wc-tabs-wrapper" style="padding-top: 0px">
+                                    <ul class="tabs wc-tabs" role="tablist">
+                                        <li class="description_tab" id="tab-title-description" role="tab"
+                                            aria-controls="tab-description">
+                                            <a href="#tab-description">
+                                                CHI TIẾT SẢN PHẨM </a>
+                                        </li>
+                                    </ul>
+                                    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
+                                        id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
 
-                            <div class="woocommerce-tabs wc-tabs-wrapper">
-                                <ul class="tabs wc-tabs" role="tablist">
-                                    <li class="description_tab" id="tab-title-description" role="tab"
-                                        aria-controls="tab-description">
-                                        <a href="#tab-description">
-                                            CHI TIẾT SẢN PHẨM </a>
-                                    </li>
-                                    {{-- <li class="additional_information_tab" id="tab-title-additional_information" role="tab"
-                                        aria-controls="tab-additional_information">
-                                        <a href="#tab-additional_information">
-                                            Additional information </a>
-                                    </li>
-                                    <li class="reviews_tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
-                                        <a href="#tab-reviews">
-                                            Reviews (0) </a>
-                                    </li> --}}
-                                </ul>
-                                <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
-                                    id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
+                                        <h2>Description</h2>
 
-                                    <h2>Description</h2>
-
-                                    {!! $product_detail->description !!}
-                                </div>
-                                {{-- <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
-                                    id="tab-additional_information" role="tabpanel"
-                                    aria-labelledby="tab-title-additional_information">
-
-                                    <h2>Additional information</h2>
-
-                                    <table class="woocommerce-product-attributes shop_attributes">
-                                        <tr
-                                            class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
-                                            <th class="woocommerce-product-attributes-item__label">Weight</th>
-                                            <td class="woocommerce-product-attributes-item__value">2.1 kg</td>
-                                        </tr>
-                                        <tr
-                                            class="woocommerce-product-attributes-item woocommerce-product-attributes-item--dimensions">
-                                            <th class="woocommerce-product-attributes-item__label">Dimensions</th>
-                                            <td class="woocommerce-product-attributes-item__value">122 &times; 145 &times;
-                                                321 cm</td>
-                                        </tr>
-                                    </table>
-                                </div> --}}
-                                {{-- <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab"
-                                    id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
-                                    <div id="reviews" class="woocommerce-Reviews">
-                                        <div id="comments">
-                                            <h2 class="woocommerce-Reviews-title">
-                                                Reviews </h2>
-
-                                            <p class="woocommerce-noreviews">There are no reviews yet.</p>
-                                        </div>
-
-                                        <div id="review_form_wrapper">
-                                            <div id="review_form">
-                                                <div id="respond" class="comment-respond">
-                                                    <span id="reply-title" class="comment-reply-title">Be the first to
-                                                        review &ldquo;Awabox Sleeve Strip&rdquo; <small><a rel="nofollow"
-                                                                id="cancel-comment-reply-link" href="index.html#respond"
-                                                                style="display:none;">Cancel reply</a></small></span>
-                                                    <form
-                                                        action="http://wordpress.templatemela.com/woo/WCM02/WCM020036/wp-comments-post.php"
-                                                        method="post" id="commentform" class="comment-form" novalidate>
-                                                        <p class="comment-notes"><span id="email-notes">Your email address
-                                                                will not be published.</span> Required fields are marked
-                                                            <span class="required">*</span></p>
-                                                        <p class="comment-form-author"><label for="author">Name&nbsp;<span
-                                                                    class="required">*</span></label><input id="author"
-                                                                name="author" type="text" value="" size="30" required /></p>
-                                                        <p class="comment-form-email"><label for="email">Email&nbsp;<span
-                                                                    class="required">*</span></label><input id="email"
-                                                                name="email" type="email" value="" size="30" required /></p>
-                                                        <div class="comment-form-rating"><label for="rating">Your
-                                                                rating</label><select name="rating" id="rating" required>
-                                                                <option value="">Rate&hellip;</option>
-                                                                <option value="5">Perfect</option>
-                                                                <option value="4">Good</option>
-                                                                <option value="3">Average</option>
-                                                                <option value="2">Not that bad</option>
-                                                                <option value="1">Very poor</option>
-                                                            </select></div>
-                                                        <p class="comment-form-comment"><label for="comment">Your
-                                                                review&nbsp;<span class="required">*</span></label><textarea
-                                                                id="comment" name="comment" cols="45" rows="8"
-                                                                required></textarea></p>
-                                                        <p class="form-submit"><input name="submit" type="submit"
-                                                                id="submit" class="submit" value="Submit" /> <input
-                                                                type='hidden' name='comment_post_ID' value='1364'
-                                                                id='comment_post_ID' />
-                                                            <input type='hidden' name='comment_parent' id='comment_parent'
-                                                                value='0' />
-                                                        </p>
-                                                    </form>
-                                                </div><!-- #respond -->
-                                            </div>
-                                        </div>
-
-                                        <div class="clear"></div>
+                                        {!! $product_detail->description !!}
                                     </div>
-                                </div> --}}
 
-                            </div>
+                                </div>
+                            @endif
+                            
 
 
                             {{-- <section class="up-sells upsells products">

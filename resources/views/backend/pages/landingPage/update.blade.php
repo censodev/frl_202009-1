@@ -8,6 +8,7 @@
     use App\Models\backend\About;
     use App\Models\backend\Image;
     use App\Models\backend\Video;
+    use App\Models\backend\Hot;
 @endphp
 
 @extends($data->layout)
@@ -280,6 +281,10 @@
                                                                 $listItems              = Video::whereIn('id', $Ids)->where('status',1)->get();
                                                                 $related                = 'related_video[]';
                                                             }
+                                                            if($type == 'hot'){
+                                                                $listItems              = Hot::whereIn('id', $Ids)->where('status',1)->get();
+                                                                $related                = 'related_hot[]';
+                                                            }
                                                         }
 
                                                     @endphp
@@ -313,13 +318,13 @@
                                                                                 <img width="40px" height="40px" src="{{ $images[0] }}" title="{{ $title_image[0] }}" alt="{{ $alt_image[0] }}">
                                                                             @elseif($type == 'album' || $type == 'video')
                                                                                 <img src="{{ $listItems->image }}" width="40px" height="40px">
-                                                                            @elseif($type == 'tv' || $type == 'newspaper')
+                                                                            @elseif($type == 'tv' || $type == 'newspaper' || $type == 'hot')
                                                                                 <img src="{{ $listItems->images }}" width="40px" height="40px">
                                                                             @else
                                                                                 <img src="{{ $images }}" width="40px" height="40px">
                                                                             @endif
                                                                             <span class="text">
-                                                                                @if($type == 'tv' || $type == 'newspaper' || $type == 'endow')
+                                                                                @if($type == 'tv' || $type == 'newspaper' || $type == 'endow' || $type == 'hot')
                                                                                     <a href="">{{ $listItems->name }}</a>
                                                                                 @else
                                                                                     <a href="">{{ $listItems->title }}</a>

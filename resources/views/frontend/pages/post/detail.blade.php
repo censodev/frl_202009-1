@@ -153,8 +153,19 @@ use App\Models\backend\ProductItem; ?>
             </div>
         </article>
         @if (count($related_posts) > 0)
-            <h1 style="padding-left: 25px;padding-bottom: 1rem;">Bài viết liên quan</h1>
+            <h1 class="big-title" style="color:#000;text-transform:uppercase!important;margin-bottom:1rem!important">
+                Bài viết liên quan
+            </h1>
             {!! render_posts_list($related_posts) !!}
+        @endif
+
+        @if ($related_products)
+            <h1 class="big-title" style="color:#000;text-transform:uppercase!important;margin-bottom:1rem!important">
+                Sản phẩm liên quan
+            </h1>
+            <ul class="products columns-5">
+                {!! render_products_list($related_products) !!}
+            </ul>
         @endif
         
         @include('frontend.includes.comment')

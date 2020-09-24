@@ -114,7 +114,7 @@ $class_col_hide = 'hide';
     @endif
 </footer> --}}
 
-<footer id="colophon" class="site-footer" style="margin-top: 4rem">
+<footer id="colophon" class="site-footer">
     <div class="theme-container">
         <div class="footer-top">
             <div id="footer-widget-area">
