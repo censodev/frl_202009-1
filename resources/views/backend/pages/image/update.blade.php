@@ -62,7 +62,9 @@
                                     </span>
                                     <input id="thumbnail" class="form-control" type="text" name="image" value="{{ old('image') ?? $data->image->image }}">
                                 </div>
-                                <div id="holder" class="thumbnail text-center"></div>
+                                <div id="holder" class="thumbnail text-center">
+                                    <img style="width:70px" src="{{ old('image') ?? $data->image->image }}" alt="" srcset="">
+                                </div>
                             </div>
 
                             
