@@ -36,13 +36,13 @@
                         alt="{{ $item->alt_image }}" />
                     <div class="block_hover">
                         <div class="links">
-                            <a href="{{ $item->images }}"
+                            {{-- <a href="{{ $item->images }}"
                                 title="Click to view Full Image" data-lightbox="example-set"
                                 class="icon mustang-gallery">
                                 <i class="fa fa-plus"></i>
-                            </a>
+                            </a> --}}
                             <a href="{{ url( $item->alias ) }}"
-                                title="Click to view Read More" class="icon readmore"><i
+                                title="Click để xem thêm" class="icon readmore"><i
                                     class="fa fa-link"></i>
                             </a>
                         </div>

@@ -19,6 +19,8 @@
                 padding-bottom: 1rem;
                 padding-top: 1rem;
                 text-align: center;
+                padding-left: 5vw;
+                padding-right: 5vw;
             }
         </style>
 
@@ -379,9 +381,32 @@
                                             <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-2">
+                                                    <style>
+                                                        .content-box {
+                                                            display: inline-block;
+                                                            width: 49%;
+                                                            padding-left: 1rem;
+                                                            padding-right: 1rem;
+                                                            box-sizing: border-box;
+                                                            vertical-align: text-top;
+                                                            position: relative;
+                                                            padding-left: 5px;
+                                                        }
+                                                        .content-box p {
+                                                            padding-left: 60px;
+                                                        }
+                                                        .content-box p::before {
+                                                            content: '🟊';
+                                                            font-size: 54px;
+                                                            color: #86c54c;
+                                                            left: 10px;
+                                                            padding-top: 15px;
+                                                            position: absolute;
+                                                        }
+                                                    </style>
                                                     @foreach ($listItems as $item)
                                                         @if ($item->position == 0)
-                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;padding-right: 1rem;box-sizing: border-box;vertical-align: text-top">
+                                                            <div class="content-box">
                                                                 {!! $item->content !!}
                                                             </div>
                                                         @endif    
@@ -393,7 +418,7 @@
                                                             @endif
                                                         </div>
                                                         @if ($item->position == 1)
-                                                            <div style="display: inline-block;width: 49%;padding-left: 1rem;box-sizing: border-box;vertical-align: text-top">
+                                                            <div class="content-box">
                                                                 {!! $item->content !!}
                                                             </div>
                                                         @endif

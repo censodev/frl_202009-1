@@ -26,5 +26,9 @@
             </div>
         </div>
     </div>
-
+    <script>
+        setTimeout(() => {
+            window.location.href = 'https://torusa.vn/'
+        }, 3000)
+    </script>
 @endsection

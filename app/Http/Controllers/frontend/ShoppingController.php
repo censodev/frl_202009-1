@@ -63,6 +63,7 @@ class ShoppingController extends Controller
         $data->layout  = $this->layout.'page';
         $data->view    = $this->view.'checkout';
         $data->content = $this->content;
+        $data->title   = 'Torusa';
 
         return View($data->view,compact('data'));
     }
@@ -158,6 +159,7 @@ class ShoppingController extends Controller
         $data->layout  = $this->layout.'page';
         $data->view    = $this->view.'success';
         $data->content = $this->content;
+        $data->title   = 'Torusa';
 
         $data->message = $request->message;
 
@@ -253,6 +255,7 @@ class ShoppingController extends Controller
             $data->layout  = $this->layout.'page';
             $data->view    = $this->view.'success';
             $data->content = $this->content;
+            $data->title   = 'Torusa';
 
             $data->message = 'Đặt Hàng Thành Công';
             $data->error = 'Đặt Hàng Không Thành Công';

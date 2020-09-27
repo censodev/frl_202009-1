@@ -9,6 +9,19 @@ $cart_total_price = session('cart_total_price');
 $session_agency = session('data_agency');
 @endphp
 
+<style>
+    .service-icon::before {
+        color: #86c54c!important;
+    }
+    .cart-icon {
+        background: transparent!important;
+    }
+    .cart-icon i {
+        color: #86c54c;
+        font-size: 30px;
+    }
+</style>
+
 <header id="masthead" class="site-header header-fix header left-sidebar">
     <div class="header-main site-header-fix">
         <!-- Start header_left -->
@@ -84,7 +97,9 @@ $session_agency = session('data_agency');
                     <div class="header-cart headercart-block">
                         <div class="cart togg">
                             <div class="shopping_cart tog" title="View your shopping cart">
-                                <div class="cart-icon"></div>
+                                <div class="cart-icon">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </div>
                                 <div class="cart-qty">
                                     <span class="cart-label">Giỏ Hàng</span>
                                     <a class="cart-contents" href="#" title="View your shopping cart">
@@ -179,6 +194,9 @@ $session_agency = session('data_agency');
                     <div class="mega-menu">
                         <div class="menu-main-menu-container">
                             <ul id="menu-main-menu-1" class="mega">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-7179">
+                                    <a href="{{ url('/') }}">Trang Chủ</a>
+                                </li>
                                 @foreach ($categories as $category)
                                     @if (!$category['childrens'])
                                         <li
