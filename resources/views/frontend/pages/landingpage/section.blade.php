@@ -13,6 +13,14 @@
         $Ids = json_decode($section->items,true);
     @endphp
     @if(isset($section->items) && !empty($section->items))
+        <style>
+            .my-section-content {
+                clear: both;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                text-align: center;
+            }
+        </style>
 
         @if($type == 'article')
             @php
@@ -31,6 +39,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo-products woo-content products_block shop woofeature">
                                                 {!! render_posts_list($listItems) !!}
                                             </div>
@@ -41,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -61,6 +71,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo-products woo-content products_block shop woofeature">
                                                 <div class="woo-grid woo_grid cols-5">
                                                     <div class="woocommerce columns-5">
@@ -77,6 +88,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -109,6 +121,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-4">
                                                     @foreach ($listItems as $item)
@@ -138,6 +151,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -158,6 +172,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-4">
                                                     @foreach ($listItems as $item)
@@ -187,6 +202,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -207,6 +223,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-3">
                                                     @foreach ($listItems as $item)
@@ -230,6 +247,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -250,6 +268,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-4">
                                                     @foreach ($listItems as $item)
@@ -278,6 +297,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -298,6 +318,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-4">
                                                     @foreach ($listItems as $item)
@@ -334,6 +355,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
 
@@ -354,6 +376,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-2">
                                                     @foreach ($listItems as $item)
@@ -384,6 +407,7 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
         
@@ -404,6 +428,7 @@
                                                     {{ $section->name }}
                                                 </h1>
                                             </div>
+                                            <div class="my-section-content">{!! $section->description !!}</div>
                                             <div class="woo_categories_slider woocat product-category grid">
                                                 <div id="category_grid" class="category-grid grid cols-4">
                                                     @foreach ($related_hots as $hot)
@@ -436,7 +461,82 @@
                         </div>
                     </div>
                 </div>
+                {!! render_action_button($section->title_action, $section->icon_action, $section->id_action) !!}
             </div>
         @endif
+    @elseif ($type == 'feedback')
+        <link href="{{ asset('assets/client/dist/css/slick-slider.css')}}" rel="stylesheet">
+        @php
+            $feedbacks = \App\Models\backend\Feedback::listFeedback();
+        @endphp
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1575458683825 vc_row-has-fill">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid theme-container">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="shortcode-title left">
+                                            <h1 class="big-title" style="color:#000;text-transform:uppercase!important">
+                                                {{ $section->name }}
+                                            </h1>
+                                        </div>
+                                        <div class="my-section-content">{!! $section->description !!}</div>
+                                        <div class="woo_categories_slider woocat product-category grid">
+                                            <div id="feedback" class="category-grid grid cols-4">
+                                                @foreach ($feedbacks as $feedback)
+                                                    @php
+                                                        $images = !empty( $feedback->images ) ? $feedback->images : asset('assets/admin/dist/img/avatar5.png');
+                                                    @endphp
+                                                    <div style="padding-left: 0.5rem;padding-right:0.5rem;">
+                                                        <img src="{{ $images }}"
+                                                            title="{{ $feedback->title_image }}" 
+                                                            alt="{{ $feedback->alt_image }}" height="206"
+                                                            width="206" style="border-radius:50%;margin:0 auto;" />
+                                                        <h4 style="text-align:center;">
+                                                            <b>{{ $feedback->name_customer }}</b>
+                                                            <small style="color:#86c54c">{{ $feedback->position }}</small>
+                                                        </h4>
+                                                        <div style="text-align:justify">{!! $feedback->description !!}</div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="{{ asset('assets/client/dist/script/slick.slider.min.js') }}"></script>
+        <script>
+            jQuery('#feedback').slick( {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                prevArrow:"<span class='slick-arrow-left'></span>",
+                nextArrow:"<span class='slick-arrow-right'></span>",
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            }
+        );
+        </script>
     @endif
 @endforeach

@@ -37,6 +37,7 @@ class LandingPageController extends Controller
         'album'     => 'Album',
         'video'     => 'Video',
         'hot'       => 'Danh Mục Nổi Bật',
+        'feedback'  => 'Cảm Nhận Khách Hàng',
     ];
     private $keyword = '';
     private $layout  = 'backend.layouts.';
@@ -128,6 +129,9 @@ class LandingPageController extends Controller
         }
         if($type === 'hot'){
             $items = !empty( $request->related_hot ) ? Genratejsonarray( $request->related_hot ) : '';
+        }
+        if($type === 'feedback'){
+            $items = '';
         }
 
         return $items;
