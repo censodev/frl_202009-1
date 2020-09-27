@@ -8,11 +8,14 @@
         padding-bottom: 1rem;
     }
     .btn-action a {
-        color: #86c54c !important;
-        border: 1px solid #86c54c!important;
+        color: #fff !important;
+        border: none;
+        background: #df2121;
         font-size: 1.5rem!important;
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-bottom: 0.25rem;
+        padding-top: 0.25rem;
         display: flex!important;
         justify-content: center;
         align-items: center;
@@ -23,11 +26,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        background-color: transparent;
-        border: 1px solid transparent;
-        padding: .375rem .75rem;
         line-height: 1.5;
-        border-radius: .25rem;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
     .btn-action a i {

@@ -278,21 +278,21 @@ use App\Models\backend\ProductItem; ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-    <style>
+    {{-- <style>
         .page-title { display: none !important; }
         #productCategories { display: block; }
-    </style>
+    </style> --}}
 
-    @include('frontend.pages.home.partial.slider')
+    {{-- @include('frontend.pages.home.partial.slider') --}}
     <div class="main-content-inner left-sidebar" style="margin-top:1rem">
         <div class="main-content">
             <div class="main-content-inner-full single-product-full">
                 <div id="primary" class="content-area">
                     <main id="content" class="site-main">
-                        {{-- <nav class="woocommerce-breadcrumb">
+                        <nav class="woocommerce-breadcrumb">
                             <span><a href="{{ url('/') }}">Trang chủ</a></span> /
                             <span><a href="{{ url( $data['category']->alias ) }}">{{ $data['category']->title }}</a></span> /
-                            <span>{{ $data['title'] }}</span></nav> --}}
+                            <span>{{ $data['title'] }}</span></nav>
                         <div class="woocommerce-notices-wrapper"></div>
                         <div id="product-1364"
                             class="has-post-thumbnail product type-product post-1364 status-publish first instock product_cat-awabox-fullerm product_cat-coffee-board product_cat-excelscoffee product_cat-machines product_cat-milk-items product_cat-oxfull-mitron product_cat-varieties featured shipping-taxable purchasable product-type-simple">
@@ -450,7 +450,7 @@ use App\Models\backend\ProductItem; ?>
 
                             <div class="summary entry-summary">
                                 <h1 class="product_title entry-title">{{ $product_detail->title }}</h1>
-                                <div>
+                                <div style="padding-top:0px;padding-bottom:0px">
                                     <span style="font-size:20px">{!! rating_star($product_detail->rating) !!}</span>
                                     <i class="fa fa-eye" aria-hidden="true" style="margin-right:0px;margin-left:10px"></i> 
                                     {{ $product_detail->view ?? 0 }}
@@ -477,20 +477,12 @@ use App\Models\backend\ProductItem; ?>
                                         </ins>
                                     @endif
                                 </p>
-                                <div class="woocommerce-product-details__short-description">
+                                <div class="woocommerce-product-details__short-description" style="padding-top:0px;padding-bottom:0px">
                                     {!! $product_detail->short_description !!}
                                 </div>
                                 {{-- <p class="stock in-stock">99 in stock</p> --}}
 
-                                <div class="product_meta">
-                                    {{-- <span class="sku_wrapper">SKU: <span class="sku">NHFL5</span></span> --}}
-                                    {{-- <span class="posted_in">Danh mục:
-                                        @foreach ($list_product as $key => $item)
-                                            @if ($item->material)
-                                                <a href="#" rel="tag">{{ $material[$item->material] }}@if ($key != count($list_product) - 1),&nbsp;@endif</a>
-                                            @endif
-                                        @endforeach
-                                    </span> --}}
+                                <div class="product_meta" style="padding-bottom: 0">
                                     @if ($product_detail->code)
                                         <span class="posted_in">Mã sản phẩm:
                                             <a href="#" rel="tag">{{ $product_detail->code }}</a>
@@ -498,7 +490,7 @@ use App\Models\backend\ProductItem; ?>
                                     @endif
                                 </div>
 
-                                <div class="product_meta">
+                                <div class="product_meta" style="padding-top: 0">
                                     <span class="posted_in">Màu sắc:
                                         @foreach ($list_product as $key => $item)
                                             @if ($item->color)
@@ -517,7 +509,7 @@ use App\Models\backend\ProductItem; ?>
                                 </div>
 
 
-                                <form class="cart product-action product-add-to-card" onsubmit="return false;">
+                                <form class="cart product-action product-add-to-card" onsubmit="return false;" style="margin:10px 0!important">
 
                                     <div class="quantity">
                                         {{-- <span class="tmpmela-quantity">Slg: </span> --}}
