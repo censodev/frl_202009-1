@@ -470,7 +470,7 @@ class ShoppingController extends Controller
                                         </td>
                                         <td class="product-name"><a href="'.$element['alias'].'" title="'.$element['name'].'">'.$element['name'].'</a></td>
                                         <td><a href="">'.$element['code'] .'</a></td>
-                                        <td><a href="">'.$element['material'] .'</a></td>
+                                        <td><a href="">'.$element['color'] .'</a></td>
                                         <td class="product-price-cart"><span class="amount">'.$element['price'].'</span></td>
                                         <td class="product-quantity">
                                             <div class="pro-dec-cart">
